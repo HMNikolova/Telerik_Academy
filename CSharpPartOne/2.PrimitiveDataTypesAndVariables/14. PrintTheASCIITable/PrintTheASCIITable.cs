@@ -12,7 +12,7 @@ class PrintTheASCIITable
 {
     static void Main()
     {
-        for (int c = 0; c < 255; c++)
+        for (int c = 0; c < 256; c++)
         {
             Console.WriteLine("Character: {0} = {1}", c, (char)c);
         }
