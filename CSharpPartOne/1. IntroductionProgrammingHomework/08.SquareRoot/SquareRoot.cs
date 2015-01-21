@@ -11,8 +11,8 @@ using System;
         static void Main()
         {
             int number = 12345;
-            int squareNumber = number * number;
-            Console.WriteLine("The square of number {0} is {1}", number, squareNumber);
+            int Number = int.Parse(Console.ReadLine()); 
+            Console.WriteLine(Math.Sqrt(Number));
         }
     }
 

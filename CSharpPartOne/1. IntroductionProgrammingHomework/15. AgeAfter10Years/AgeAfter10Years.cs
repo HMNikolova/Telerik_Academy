@@ -9,7 +9,7 @@ using System;
     {
         static void Main()
         {
-            Console.Write("Enter your birthday (dd.mm.yyyy): ");
+            Console.Write("Enter your birthday (yyyy.mm.dd): ");
             string myBirthday = Console.ReadLine();
             DateTime myDTBirthday = DateTime.Parse(myBirthday);
             DateTime nowDT = DateTime.Now;

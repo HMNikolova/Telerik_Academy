@@ -9,6 +9,7 @@ using System;
     {
         static void Main()
         {
+
             for (int i = 0, num = 2; i < 1000; i++, num++)
             {
                 if (num % 2 == 0)
