@@ -10,7 +10,7 @@ using System;
         static void Main()
         {
             bool isFemale = true;
-            Console.WriteLine(isFemale);
+            Console.WriteLine("Is my gender female? -> {0}", isFemale);
         }
     }
 

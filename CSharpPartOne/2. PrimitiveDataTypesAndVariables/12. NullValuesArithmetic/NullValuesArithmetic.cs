@@ -17,8 +17,8 @@ using System;
 
             double? isNullDouble = null;
             Console.WriteLine("This is the double with null value -> {0}", isNullDouble);
-            isNullDouble = 10;
-            Console.WriteLine("This is the integer with null value 10 -> {0}", isNullDouble);
+            isNullDouble = 5.5;
+            Console.WriteLine("This is the double with null value 10 -> {0}", isNullDouble);
         }
     }
 

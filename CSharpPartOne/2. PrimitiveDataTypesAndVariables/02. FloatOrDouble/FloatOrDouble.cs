@@ -9,14 +9,15 @@ using System;
     {
         static void Main()
         {
+            
+            double firstNum = 34.567839023;
+            double secondNum = 8923.1234857;
             float thirdNum = 12.345f;
             float fourthNum = 3456.091f;
 
-            double firstNum = 34.567839023;
-            double secondNum = 8923.1234857;
-
-            Console.WriteLine("Variables of type floats are: {0} and {1}", thirdNum, fourthNum);
             Console.WriteLine("Variables of type doubles are: {0} and {1}", firstNum, secondNum);
+            Console.WriteLine("Variables of type floats are: {0} and {1}", thirdNum, fourthNum);
+            
         }
     }
 
