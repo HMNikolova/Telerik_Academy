@@ -16,7 +16,7 @@ using System;
             Console.Write("c = ");
             double c = double.Parse(Console.ReadLine());
 
-            double diskriminant = (b * b) - 4 * a * c;
+            double diskriminant = (b * b) - (4 * a * c);
             double firstX = 0;
             double seconX = 0;
 
