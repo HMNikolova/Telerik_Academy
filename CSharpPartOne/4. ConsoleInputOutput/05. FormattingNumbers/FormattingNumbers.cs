@@ -15,11 +15,11 @@ using System;
     {
         static void Main()
         {
-            Console.Write("Enter integer a: ");
+            Console.Write("Enter integer number: ");
         int a = int.Parse(Console.ReadLine());
-        Console.Write("Enter double b: ");
+        Console.Write("Enter double number: ");
         double b = double.Parse(Console.ReadLine());
-        Console.Write("Enter double c: ");
+        Console.Write("Enter double number: ");
         double c = double.Parse(Console.ReadLine());
 
         Console.Write("|{0,-10}|", a.ToString("X"));
