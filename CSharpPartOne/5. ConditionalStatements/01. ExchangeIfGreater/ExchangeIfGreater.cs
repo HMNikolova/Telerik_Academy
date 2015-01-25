@@ -6,8 +6,8 @@ using System;
     class ExchangeIfGreater
     {
         static void Main()
-        {
-
+        {   
+            double a = double.Parse(Console.ReadLine());
         }
     }
 
