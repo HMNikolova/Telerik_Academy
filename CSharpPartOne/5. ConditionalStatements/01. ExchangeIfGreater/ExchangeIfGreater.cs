@@ -26,7 +26,7 @@ using System;
             }
             else if(a == b)
             {
-                Console.WriteLine("Wrong input!");
+                Console.WriteLine("The numbers are equal!");
             }
         }
     }
