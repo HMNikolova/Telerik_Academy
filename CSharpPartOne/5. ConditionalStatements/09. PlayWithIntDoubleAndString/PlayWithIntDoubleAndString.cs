@@ -11,7 +11,28 @@ using System;
     {
         static void Main()
         {
-
+            Console.WriteLine("1 --> int");
+        Console.WriteLine("2 --> double");
+        Console.WriteLine("3 --> string");
+        Console.Write("Please write a number between 1 and 3: ");
+        int type = int.Parse(Console.ReadLine());
+            switch (type)
+                {
+                    case 1: Console.Write("Please enter a int: ");
+                        int typeInt = int.Parse(Console.ReadLine());
+                        Console.WriteLine(typeInt + 1);
+                        break;
+                    case 2: Console.Write("Please enter a double: ");
+                        double typeDouble = double.Parse(Console.ReadLine());
+                        Console.WriteLine(typeDouble + 1);
+                        break;
+                    case 3: Console.Write("Please enter a string: ");
+                        string typeString = Console.ReadLine();
+                        Console.WriteLine(typeString + '*');
+                        break;
+                    default: Console.WriteLine("This is not correct number!");
+                        break;
+        	    }
         }
     }
 
