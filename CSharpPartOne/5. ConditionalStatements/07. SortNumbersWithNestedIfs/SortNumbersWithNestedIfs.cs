@@ -9,11 +9,11 @@ using System;
     {
         static void Main()
         {
-            Console.Write("a = ");
+            Console.Write("Enter the first number: ");
             double a = double.Parse(Console.ReadLine());
-            Console.Write("b = ");
+            Console.Write("Enter the second number: ");
             double b = double.Parse(Console.ReadLine());
-            Console.Write("c = ");
+            Console.Write("Enter the third number: ");
             double c = double.Parse(Console.ReadLine());
     
             if (a > b && a > c)

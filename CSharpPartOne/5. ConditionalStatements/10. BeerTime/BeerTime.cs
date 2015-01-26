@@ -8,7 +8,7 @@ using System;
     {
         static void Main()
         {
-            Console.Write("Enter a time to check: ");
+            Console.Write("Enter a time in the following format hh:mm tt: ");
             try
             {
                 DateTime time = DateTime.Parse(Console.ReadLine());
