@@ -11,8 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. MissCat", "02. MissCat\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. AstrDigits", "02. AstrDigits\02. AstrDigits.csproj", "{4C201986-ACCC-470A-9B16-487109E048CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. CartesianCoordinateSystem", "01. CartesianCoordinateSystem\01. CartesianCoordinateSystem.csproj", "{116DD3E4-AEE9-4F6C-92F3-0989D1EECFC8}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. FighterAttack", "01. FighterAttack\01. FighterAttack.csproj", "{BBD38F95-88AC-4081-A031-C6C87A0649A7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. ShipDamage", "01. ShipDamage\01. ShipDamage.csproj", "{620A7BF8-7031-4B4C-8C9E-D7A0351B45FD}"
@@ -30,6 +28,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05. Lines", "05. Lines\05. Lines.csproj", "{D8394E4A-9CD1-460A-88EE-90B18548926A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05. Pillars", "05. Pillars\05. Pillars.csproj", "{82DFD185-AB79-4ACD-9A16-D5FEC90DA748}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. CartesianCoordinateSystem", "01. CartesianCoordinateSystem\01. CartesianCoordinateSystem.csproj", "{B19F9391-2B45-4610-944B-FE078F4B7B2D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,10 +53,6 @@ Global
 		{4C201986-ACCC-470A-9B16-487109E048CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C201986-ACCC-470A-9B16-487109E048CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C201986-ACCC-470A-9B16-487109E048CF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{116DD3E4-AEE9-4F6C-92F3-0989D1EECFC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{116DD3E4-AEE9-4F6C-92F3-0989D1EECFC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{116DD3E4-AEE9-4F6C-92F3-0989D1EECFC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{116DD3E4-AEE9-4F6C-92F3-0989D1EECFC8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BBD38F95-88AC-4081-A031-C6C87A0649A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BBD38F95-88AC-4081-A031-C6C87A0649A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BBD38F95-88AC-4081-A031-C6C87A0649A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -93,6 +89,10 @@ Global
 		{82DFD185-AB79-4ACD-9A16-D5FEC90DA748}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82DFD185-AB79-4ACD-9A16-D5FEC90DA748}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{82DFD185-AB79-4ACD-9A16-D5FEC90DA748}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B19F9391-2B45-4610-944B-FE078F4B7B2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B19F9391-2B45-4610-944B-FE078F4B7B2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B19F9391-2B45-4610-944B-FE078F4B7B2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B19F9391-2B45-4610-944B-FE078F4B7B2D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

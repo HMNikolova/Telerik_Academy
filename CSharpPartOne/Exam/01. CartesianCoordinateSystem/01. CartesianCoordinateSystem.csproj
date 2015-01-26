@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{116DD3E4-AEE9-4F6C-92F3-0989D1EECFC8}</ProjectGuid>
+    <ProjectGuid>{B19F9391-2B45-4610-944B-FE078F4B7B2D}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>_01.CartesianCoordinateSystem</RootNamespace>
