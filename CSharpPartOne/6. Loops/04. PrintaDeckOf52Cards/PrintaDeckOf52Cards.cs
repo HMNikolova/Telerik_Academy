@@ -9,7 +9,21 @@ using System;
     {
         static void Main()
         {
+            string[] suit = { "spades", "clubs", "hearts", "diamonds" };
+            string[] value = { "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A" };
 
+            for (int i = 0; i < value.Length; i++)
+            {
+                for (int j = 0; j < suit.Length; j++)
+                {
+                    Console.Write("{0} of {1}", value[i], suit[j]);
+                    if (j < suit.Length - 1)
+                    {
+                        Console.Write(", ");
+                    }
+                }
+                Console.WriteLine();
+            }
         }
     }
 

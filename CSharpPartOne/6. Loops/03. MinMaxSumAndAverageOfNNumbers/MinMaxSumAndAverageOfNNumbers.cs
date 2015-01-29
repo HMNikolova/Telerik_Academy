@@ -5,11 +5,36 @@
 
 using System;
 
-    class MinMaxSumAndAverageOfNNumbers
+class MinMaxSumAndAverageOfNNumbers
+{
+    static void Main()
     {
-        static void Main()
+        Console.Write("Please, enter interger number of sequence of numbers: ");
+        int n = int.Parse(Console.ReadLine());
+        int min = int.MaxValue;
+        int max = int.MinValue;
+        int sum = 0;
+        double average = 0;
+        for (int i = 0; i < n; i++)
         {
-
+            Console.Write("Enter integer {0}: ", i + 1);
+            int num = int.Parse(Console.ReadLine());
+            if (num > max)
+            {
+                max = num;
+            }
+            if (num < min)
+            {
+                min = num;
+            }
+            sum += num;
         }
+
+        average = (double)sum / n;
+        Console.WriteLine("min = " + min);
+        Console.WriteLine("max = " + max);
+        Console.WriteLine("sum = " + sum);
+        Console.WriteLine("average = {0:f2}", average);
+    }
     }
 

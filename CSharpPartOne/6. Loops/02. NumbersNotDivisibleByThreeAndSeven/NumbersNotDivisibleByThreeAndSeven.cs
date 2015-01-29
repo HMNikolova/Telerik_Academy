@@ -7,7 +7,18 @@ using System;
     {
         static void Main()
         {
-
+            Console.Write("Enter a positive integer: ");
+            uint n = uint.Parse(Console.ReadLine());
+            
+            for (uint i = 1; i <= n; i++)
+            {
+                if (i % 7 != 0 && i % 3 != 0)
+                {
+                    Console.Write(i + " ");
+                }
+                
+            }
+            
         }
     }
 
