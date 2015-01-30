@@ -9,7 +9,26 @@ using System;
     {
         static void Main()
         {
+            Console.WriteLine("Decimal To Binary Number");
+            Console.Write("Enter a number to convert: ");
+            long input = long.Parse(Console.ReadLine());
+            string number = null;
+            while (input > 0)
+            {
+                if (input % 2 == 0)
+                {
+                    number += "0";
+                }
+                else
+                {
+                    number += "1";
+                }
 
+                input = input / 2;
+            }
+            char[] rev = number.ToCharArray();
+            Array.Reverse(rev);
+            Console.WriteLine(rev);
         }
     }
 

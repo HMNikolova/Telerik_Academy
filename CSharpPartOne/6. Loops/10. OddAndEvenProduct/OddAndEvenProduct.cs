@@ -9,7 +9,39 @@ using System;
     {
         static void Main()
         {
+             Console.WriteLine("Odd And Even Product");
+            Console.Write("Enter a numbers in a single line separated with space: ");
+            string[] input = Console.ReadLine().Split();
+            int oddProduct = 1;
+            int evenProdduct = 1;
+            for (int index = 0; index < input.Length; index++)
+            {
+                int num = int.Parse(input[index]);
+                if (index %2 == 0 || index == 0)
+                {
+                    oddProduct *= num;
+                }
+                else
+                {
+                    evenProdduct *= num;    
+                }
+
+            }
+            if (oddProduct == evenProdduct)
+            {
+                Console.WriteLine("yes");
+                Console.WriteLine("product = {0}", oddProduct);   
+            }
+            else
+            {
+                Console.WriteLine("no");
+                Console.WriteLine("odd Product = {0}", oddProduct);
+                Console.WriteLine("even Product = {0}", evenProdduct);    
+            }
+         
 
         }
-    }
+  }
+      
+    
 

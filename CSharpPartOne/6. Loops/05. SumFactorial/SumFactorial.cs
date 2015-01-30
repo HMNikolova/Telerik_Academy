@@ -8,7 +8,22 @@ using System;
     {
         static void Main()
         {
+            Console.Write("Enter N: ");
+            int n = int.Parse(Console.ReadLine());
+            Console.Write("Enter X: ");
+            int x = int.Parse(Console.ReadLine());
 
+            double factorialN = 1;
+            double xPowN = 1;
+            double sum = 1;
+
+            for (int i = 1; i <= n; i++)
+            {
+                factorialN *= i;
+                xPowN *= x;
+                sum += (factorialN / xPowN);
+            }
+            Console.WriteLine("{0:F5}", sum);
         }
     }
 
