@@ -9,25 +9,20 @@ using System.Linq;
     {
         static void Main()
         {
-            bool[] nums = new bool[10000000];
-            for (int i = 2; i < Math.Sqrt(nums.Length); i++)
+             bool[] isComplex = new bool[10000000];
+        for (int i = 2; i < 10000000; i++)
+        {
+            if (!isComplex[i])
             {
-                if (nums[i] == false)
+                Console.Write(" {0},",i);
+                int j = i;
+                do
                 {
-                    for (int j = i * i; j < nums.Length; j = j + i)
-                    {
-                        nums[j] = true;
-                    }
-                }
+                    isComplex[j] = true;
+                    j = j + i;
+                } while (j < 10000000);
             }
-            for (int i = 2; i < nums.Length; i++)
-            {
-                if (nums[i] == false)
-                {
-                    Console.WriteLine("{0} ", i);
-                }
-            }
-            Console.WriteLine();
+        }
         }
     }
 
