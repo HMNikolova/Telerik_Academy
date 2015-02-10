@@ -11,7 +11,8 @@ using System.Linq;
         static void Main()
         {
             int[] letters = new int[26];
-            for (char i = 'A'; i <= 'Z'; i++) letters[i - 65] = i;
+            for (char i = 'A'; i <= 'Z'; i++) 
+                letters[i - 65] = i;
 
             Console.Write("Enter a word: ");
             string word = Console.ReadLine();

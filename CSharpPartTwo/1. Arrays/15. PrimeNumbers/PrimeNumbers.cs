@@ -9,20 +9,26 @@ using System.Linq;
     {
         static void Main()
         {
-             bool[] isComplex = new bool[10000000];
-        for (int i = 2; i < 10000000; i++)
+            bool[] аrr = new bool[10000000];
+
+        for (int i = 2; i < Math.Sqrt(аrr.Length); i++)
         {
-            if (!isComplex[i])
+            if (аrr[i] == false)
             {
-                Console.Write(" {0},",i);
-                int j = i;
-                do
+                for (int j = i * i; j < аrr.Length; j = j + i)
                 {
-                    isComplex[j] = true;
-                    j = j + i;
-                } while (j < 10000000);
+                    аrr[j] = true;
+                }
+            }
+        }
+        for (int i = 2; i < аrr.Length; i++)
+        {
+            if (аrr[i] == false)
+            {
+                Console.WriteLine("{0} ", i);
             }
         }
         }
-    }
+        }
+   
 
