@@ -12,42 +12,26 @@ namespace Test
     {
         static void Main(string[] args)
         {
-            Console.Write("Enter a sum to look for: ");
-            long S = long.Parse(Console.ReadLine());
-            long[] input = { 2, 1, 2, 4, 3, 5, 2, 6 };    //remove this line if you want to enter another input
 
-            //string input = Console.ReadLine();        //uncomment these lines to enter another array in format x, y, ...
-            //string[] numsStr = input.Split(new char[] {',', ' '}, StringSplitOptions.RemoveEmptyEntries);
-            //long[] inputArr = new long[numsStr.Length];
-            //for (int i = 0; i < input.Length; i++)
-            //{
-            //    inputArr[i] = int.Parse(numsStr[i]);
-            //}
 
-            long curSum = 0;
-            int count = 0;
+            int[, ,] cube = new int[3, 4, 5];
 
-            for (int i = 1; i <= (int)Math.Pow(2, input.Length) - 1; i++)
+            string result = string.Empty;
             {
-                curSum = 0;
-                string template = Convert.ToString(i, 2).PadLeft(input.Length, '0');
-
-                for (int j = 0; j < template.Length; j++)
+                for (int x = 0; x < 3; x++)
                 {
-                    if (template[j].ToString() == "1")
+                    for (int y = 0; y < 4; y++)
                     {
-                        curSum += input[j];
+                        for (int z = 0; z < 5; z++)
+                        {
+                            cube[x, y, z] = x * y * z;
+                        }
                     }
                 }
-                if (curSum == S)
-                {
-                    count++;
-                }
+                
             }
-            if (count > 0)
-            {
-                Console.WriteLine("Yes, {0} combinations of elements in the array [{1}] have a sum of {2}.", count, string.Join(", ", input), S);
-            }
+            Console.WriteLine("Cell at [1,2,3]: {0}", cube[1, 2, 3]);
+            Console.WriteLine("Last cell: {0}", cube[2,3,4]);
 
         }
     }
