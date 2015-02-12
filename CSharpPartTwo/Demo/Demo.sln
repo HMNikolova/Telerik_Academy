@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Multidimensional Arrays Demo", "Multidimensional Arrays Demo\Multidimensional Arrays Demo.csproj", "{0B8EE877-258B-47E8-8797-1BD356CB1D53}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Multidimensional Arrays 2", "Multidimensional Arrays 2\Multidimensional Arrays 2.csproj", "{F1D37441-702E-4620-B537-78570F92DC99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JaggedArrays", "JaggedArrays\JaggedArrays.csproj", "{B13F20D0-30A3-45D9-A836-C17ACCF526A2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{0B8EE877-258B-47E8-8797-1BD356CB1D53}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0B8EE877-258B-47E8-8797-1BD356CB1D53}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0B8EE877-258B-47E8-8797-1BD356CB1D53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1D37441-702E-4620-B537-78570F92DC99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1D37441-702E-4620-B537-78570F92DC99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1D37441-702E-4620-B537-78570F92DC99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1D37441-702E-4620-B537-78570F92DC99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B13F20D0-30A3-45D9-A836-C17ACCF526A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B13F20D0-30A3-45D9-A836-C17ACCF526A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B13F20D0-30A3-45D9-A836-C17ACCF526A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B13F20D0-30A3-45D9-A836-C17ACCF526A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
