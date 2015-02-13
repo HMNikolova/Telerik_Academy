@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. Fill the matrix", "01. Fill the matrix\01. Fill the matrix.csproj", "{BFC426B3-EB70-4D87-974E-286FC4909847}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. Maximal sum", "02. Maximal sum\02. Maximal sum.csproj", "{B8283FE7-049F-43A2-B4BD-B81EDBB9EA88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. Sequence n matrix", "03. Sequence n matrix\03. Sequence n matrix.csproj", "{6CDE7586-9D68-4F95-9DE4-5F0D1493C576}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05. Sort by string length", "05. Sort by string length\05. Sort by string length.csproj", "{F32C0E97-F11A-425B-83C3-5C149839A25D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06.(opt) Matrix class", "06.(opt) Matrix class\06.(opt) Matrix class.csproj", "{82C5AC59-1D55-40EB-9649-977CD4787E19}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07.(opt) Largest area in matrix", "07.(opt) Largest area in matrix\07.(opt) Largest area in matrix.csproj", "{28F77AEA-5399-4901-9DD1-58A11D58642F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04. Binary search", "04. Binary search\04. Binary search.csproj", "{0F287111-6F18-4ACB-A174-344482A5BB13}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BFC426B3-EB70-4D87-974E-286FC4909847}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFC426B3-EB70-4D87-974E-286FC4909847}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFC426B3-EB70-4D87-974E-286FC4909847}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFC426B3-EB70-4D87-974E-286FC4909847}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8283FE7-049F-43A2-B4BD-B81EDBB9EA88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8283FE7-049F-43A2-B4BD-B81EDBB9EA88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8283FE7-049F-43A2-B4BD-B81EDBB9EA88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8283FE7-049F-43A2-B4BD-B81EDBB9EA88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CDE7586-9D68-4F95-9DE4-5F0D1493C576}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CDE7586-9D68-4F95-9DE4-5F0D1493C576}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CDE7586-9D68-4F95-9DE4-5F0D1493C576}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CDE7586-9D68-4F95-9DE4-5F0D1493C576}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F32C0E97-F11A-425B-83C3-5C149839A25D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F32C0E97-F11A-425B-83C3-5C149839A25D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F32C0E97-F11A-425B-83C3-5C149839A25D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F32C0E97-F11A-425B-83C3-5C149839A25D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82C5AC59-1D55-40EB-9649-977CD4787E19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82C5AC59-1D55-40EB-9649-977CD4787E19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82C5AC59-1D55-40EB-9649-977CD4787E19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82C5AC59-1D55-40EB-9649-977CD4787E19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28F77AEA-5399-4901-9DD1-58A11D58642F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28F77AEA-5399-4901-9DD1-58A11D58642F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28F77AEA-5399-4901-9DD1-58A11D58642F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28F77AEA-5399-4901-9DD1-58A11D58642F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F287111-6F18-4ACB-A174-344482A5BB13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F287111-6F18-4ACB-A174-344482A5BB13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F287111-6F18-4ACB-A174-344482A5BB13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F287111-6F18-4ACB-A174-344482A5BB13}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

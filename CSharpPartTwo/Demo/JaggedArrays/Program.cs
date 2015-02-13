@@ -10,41 +10,114 @@ namespace JaggedArrays
     {
         static void Main(string[] args)
         {
-            int[] numbers = Enumerable.Range(1, 10).ToArray();
-            int[]sizes = new int[3];
+            //деление на каквото и да е число с остатък
+            int n = 10;
+            int[] numbers = { 0, 1, 4, 113, 55, 3, 1, 2, 66, 557, 124, 2 };
+            int[] sizes = new int[n];
+
+            
             foreach (var number in numbers)
             {
-                int remainder = number % 3;
-                ++sizes[remainder];
-                //if (remainder == 0)
-                //{
-                //    ++sizes[0];
-                //}
-                //else if (remainder == 1)
-                //{
-                //    ++sizes[1];
-                //}
-                //else if (remainder == 2)
-                //{
-                //    ++sizes[2];
-                //}
-                int[][] numbersByRemainder = new int[3][];
-                //numbersByRemainder[0] = new int[sizes[0]];
-                //numbersByRemainder[1] = new int[sizes[1]];
-                //numbersByRemainder[2] = new int[sizes[2]];
-                for (int i = 0; i < numbersByRemainder.Length; i++)
-                {
-                    numbersByRemainder[i] = new int[sizes[i]];
-                }
-                foreach (var number in numbers)
-                {
-                    int remainder = number % 3;
-                    ++sizes[remainder];
-                    numbersByRemainder[remainder][index] = number;
-                }
+                int remainder = number % n;
+                sizes[remainder]++;
             }
-            Console.WriteLine(string.Join(", ", numbers));
-            Console.WriteLine(string.Join(", ", sizes));
+            int[] offsets = new int[n];
+            int[][] numbersByRemainder = new int[n][];
+            for (int i = 0; i < n; i++)
+            {
+                numbersByRemainder[i] = new int[sizes[i]];
+            }
+            //{ new int[sizes[0]],
+            //    new int[sizes[1]], 
+            //    new int[sizes[2]] };
+            foreach (var number in numbers)
+            {
+                int remainder = number % n;
+                int index = offsets[remainder];
+                numbersByRemainder[remainder][index] = number;
+                offsets[remainder]++;
+            }
+
+            for (int row = 0; row < numbersByRemainder.GetLength(0); row++)
+            {
+                foreach (var num in numbersByRemainder[row])
+                {
+                    Console.Write(num + " ");
+                }
+                Console.WriteLine();
+            }
+ 
+
+
+
+            ////int[] numbers = Enumerable.Range(1, 10).ToArray();
+            //int[] numbers = { 3, 5, 4, 6, 12, 2, 3 };
+            //int[] counts = new int[3];
+            //foreach (var number in numbers)
+            //{
+            //    int remainder = number % 3;
+            //    ++counts[remainder];
+            //}
+            //int[][] numbersByRemainder = new int[3][]
+            //{
+            //    new int[counts[0]],
+            //    new int[counts[1]],
+            //    new int[counts[2]]
+            //};
+
+            //int[] indices = new int[3];
+
+            //foreach (var number in numbers)
+            //{
+            //    int remainder = number % 3;
+            //    int position = indices[remainder]; 
+            //    numbersByRemainder[remainder][position] = number;
+            //    ++indices[remainder];
+            //}
+          
+
+            //Console.WriteLine(string.Join(", ", numbers));
+            //for (int row = 0; row < numbersByRemainder.Length; row++)
+            //{
+            //    Console.WriteLine("With remainder {0}", row);
+            //    for (int col = 0; col < numbersByRemainder[row].Length; col++)
+            //    {
+            //        Console.WriteLine(numbersByRemainder[row][col]);
+            //    }
+            //}
+            //int[]sizes = new int[3];
+            //foreach (var number in numbers)
+            //{
+            //    int remainder = number % 3;
+            //    ++sizes[remainder];
+            //    //if (remainder == 0)
+            //    //{
+            //    //    ++sizes[0];
+            //    //}
+            //    //else if (remainder == 1)
+            //    //{
+            //    //    ++sizes[1];
+            //    //}
+            //    //else if (remainder == 2)
+            //    //{
+            //    //    ++sizes[2];
+            //    //}
+            //    int[][] numbersByRemainder = new int[3][];
+            //    //numbersByRemainder[0] = new int[sizes[0]];
+            //    //numbersByRemainder[1] = new int[sizes[1]];
+            //    //numbersByRemainder[2] = new int[sizes[2]];
+            //    for (int i = 0; i < numbersByRemainder.Length; i++)
+            //    {
+            //        numbersByRemainder[i] = new int[sizes[i]];
+            //    }
+            //    foreach (var number in numbers)
+            //    {
+            //        int remainder = number % 3;
+            //        ++sizes[remainder];
+            //        numbersByRemainder[remainder][index] = number;
+            //    }
+            //}
+
 
 
 
