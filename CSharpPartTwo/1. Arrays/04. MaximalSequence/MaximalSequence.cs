@@ -9,36 +9,51 @@ using System.Linq;
     {
         static void Main()
         {
-            Console.Write("Enter the size of the array: ");
-            int n = int.Parse(Console.ReadLine());
-            int maxSequence = 1;
-            int sequence = 1;
-            int number = 0;
-            int[] arr = new int[n];
-            for (int i = 0; i < n; i++)
+            Console.Write("Enter numbers with space: ");
+            string input = Console.ReadLine();
+            string[] numbersString = input.Split(new char[] { ',', ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            int[] nums = new int[numbersString.Length];
+            for (int i = 0; i < nums.Length; i++)
             {
-                Console.Write("arr[{0}] = ", i);
-                arr[i] = int.Parse(Console.ReadLine());
+                nums[i] = int.Parse(numbersString[i]);
             }
-            for (int i = 0; i < n - 1; i++)
+
+            int[] numbers = input
+                .Split(new char[] { ',', ' ' }, StringSplitOptions.RemoveEmptyEntries)
+                .Select(n => int.Parse(n)).ToArray();
+
+            int[] hardcodedNums = { 2, 1, 1, 2, 3, 3, 2, 2, 2, 1 };
+
+            int currentNum, maxNum = nums[0];
+            int currentCount, maxCount = 0;
+            for (int i = 0; i < nums.Length; )
             {
-                if (arr[i] == arr[i + 1])
+                currentNum = nums[i];
+                currentCount = 0;
+                for (; i < nums.Length; i++)
                 {
-                    sequence++;
+                    if (currentNum != nums[i])
+                    {
+                        break;
+                    }
+
+                    currentCount++;
                 }
-                else
+
+                if (maxCount <= currentCount)
                 {
-                    sequence = 1;
-                }
-                if (sequence >= maxSequence)
-                {
-                    maxSequence = sequence;
-                    number = arr[i];
+                    maxCount = currentCount;
+                    maxNum = currentNum;
                 }
             }
-            for (int i = 0; i < maxSequence; i++)
+
+            for (int i = 0; i < maxCount; i++)
             {
-                Console.Write("{0} ", number);
+                Console.Write(maxNum);
+                if (i != maxCount - 1)
+                {
+                    Console.Write(", ");
+                }
             }
             Console.WriteLine();
         }

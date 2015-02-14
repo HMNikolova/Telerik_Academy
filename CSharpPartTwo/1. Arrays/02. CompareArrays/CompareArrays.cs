@@ -46,7 +46,7 @@ class CompareArrays
         {
             isEqual = false;
         }
-        Console.WriteLine("Equal = {0}", isEqual);
+        Console.WriteLine("Are the arrays equal: = {0}", isEqual);
         }
     }
 

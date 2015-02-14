@@ -9,44 +9,23 @@ using System.Linq;
     {
         static void Main()
         {
-            Console.WriteLine("Comparing two char arrays!");
-            Console.Write("Enter size of the first array: ");
-            int x = int.Parse(Console.ReadLine());
-            Console.Write("Enter size of the second array: ");
-            int y = int.Parse(Console.ReadLine());
-            char[] firstArray = new char[x];
-            char[] secondArray = new char[y];
-            bool isEqual = true;
-            if (x == y)
-            {
-                Console.WriteLine("Enter {0} chars for the first array: ", x);
-                for (int i = 0; i < x; i++)
-                {
-                    Console.Write("First Array[{0}] = ", i);
-                    firstArray[i] = char.Parse(Console.ReadLine());
-                }
+            Console.Write("Enter first word: ");
+            char[] firstWord = Console.ReadLine().ToCharArray();
+            Console.Write("Enter second word: ");
+            char[] secondWord = Console.ReadLine().ToCharArray();
+            string lexFirst = string.Join("", firstWord);
+            int length = Math.Min(firstWord.Length, secondWord.Length);
+            for (int i = 0; i < length; i++)
+			{
+                if (firstWord[i] > secondWord[i])
+	        {
+		         lexFirst = string.Join("", secondWord);
+                 break;
+	        }
+			}
+            Console.WriteLine("Lexicographically first is: {0}", lexFirst);
 
-                Console.WriteLine("Enter {0} chars for the second array: ", y);
-                for (int i = 0; i < y; i++)
-                {
-                    Console.Write("Second Array[{0}] = ", i);
-                    secondArray[i] = char.Parse(Console.ReadLine());
-                }
-                for (int i = 0; i < x; i++)
-                {
-                    if (firstArray[i] != secondArray[i])
-                    {
-                        isEqual = false;
-                        break;
-                    }
-                }
 
-            }
-            else
-            {
-                isEqual = false;
-            }
-            Console.WriteLine("Equal = {0}", isEqual);
         }
     }
 

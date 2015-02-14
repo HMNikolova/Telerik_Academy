@@ -13,8 +13,9 @@ class AllocateArray
             for (int i = 0; i < numbers.Length; i++)
             {
                 numbers[i] = i * 5; 
-                Console.WriteLine("index[{0}] = {1}", i, numbers[i]);
+                //Console.WriteLine("index[{0}] = {1}", i, numbers[i]);
             }
+            Console.WriteLine(string.Join(", ", numbers));
         }
     }
 
