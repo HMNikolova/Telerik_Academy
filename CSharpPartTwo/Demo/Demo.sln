@@ -19,6 +19,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metods", "Metods\Metods.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DonBeAngry", "DonBeAngry\DonBeAngry.csproj", "{4606AF1C-4ABE-4910-ABBA-9C7AF4A167E8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "9Gag Numbers", "9Gag Numbers\9Gag Numbers.csproj", "{F5118695-5A06-4A87-831E-3E422C78D056}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExamCSharpTwo", "ExamCSharpTwo\ExamCSharpTwo.csproj", "{8AE7D60D-FCF8-44AA-BEE2-9C08F9FD268F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +61,14 @@ Global
 		{4606AF1C-4ABE-4910-ABBA-9C7AF4A167E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4606AF1C-4ABE-4910-ABBA-9C7AF4A167E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4606AF1C-4ABE-4910-ABBA-9C7AF4A167E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5118695-5A06-4A87-831E-3E422C78D056}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5118695-5A06-4A87-831E-3E422C78D056}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5118695-5A06-4A87-831E-3E422C78D056}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5118695-5A06-4A87-831E-3E422C78D056}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AE7D60D-FCF8-44AA-BEE2-9C08F9FD268F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AE7D60D-FCF8-44AA-BEE2-9C08F9FD268F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AE7D60D-FCF8-44AA-BEE2-9C08F9FD268F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AE7D60D-FCF8-44AA-BEE2-9C08F9FD268F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
