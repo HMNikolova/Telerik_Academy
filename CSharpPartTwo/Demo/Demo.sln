@@ -23,6 +23,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "9Gag Numbers", "9Gag Number
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExamCSharpTwo", "ExamCSharpTwo\ExamCSharpTwo.csproj", "{8AE7D60D-FCF8-44AA-BEE2-9C08F9FD268F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassAndObject", "ClassAndObject\ClassAndObject.csproj", "{5F9EB7DB-1C56-4BDC-9CA3-9510D38A2BEA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game", "Game\Game.csproj", "{182F86E3-736E-4F9C-A2F5-7173DD6D1598}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +73,14 @@ Global
 		{8AE7D60D-FCF8-44AA-BEE2-9C08F9FD268F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8AE7D60D-FCF8-44AA-BEE2-9C08F9FD268F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8AE7D60D-FCF8-44AA-BEE2-9C08F9FD268F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F9EB7DB-1C56-4BDC-9CA3-9510D38A2BEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F9EB7DB-1C56-4BDC-9CA3-9510D38A2BEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F9EB7DB-1C56-4BDC-9CA3-9510D38A2BEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F9EB7DB-1C56-4BDC-9CA3-9510D38A2BEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{182F86E3-736E-4F9C-A2F5-7173DD6D1598}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{182F86E3-736E-4F9C-A2F5-7173DD6D1598}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{182F86E3-736E-4F9C-A2F5-7173DD6D1598}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{182F86E3-736E-4F9C-A2F5-7173DD6D1598}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
