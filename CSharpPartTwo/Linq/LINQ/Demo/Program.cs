@@ -8,6 +8,15 @@ namespace Demo
 {
     class Program
     {
+        static bool Print(int number)
+        {
+            if (number > 10)
+            {
+                return true;
+            }
+            return false;
+        }
+        
         static void Main(string[] args)
         {
             //var students = new List<string>();
@@ -26,9 +35,10 @@ namespace Demo
             
             
             
-            
-            
-            
+            //Delegate
+            //в тип данни Func може да пазим ламбда функции или обикновени функции
+            //първо трябва да кажем какъв параметър връща функцията и след това типа на функцията
+            Func<int, bool> func = Print;
         }
     }
 }
