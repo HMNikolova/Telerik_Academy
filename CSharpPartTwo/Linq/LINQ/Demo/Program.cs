@@ -8,14 +8,14 @@ namespace Demo
 {
     class Program
     {
-        static bool Print(int number)
-        {
-            if (number > 10)
-            {
-                return true;
-            }
-            return false;
-        }
+        //static bool Print(int number)
+        //{
+            //if (number > 10)
+            //{
+                //return true;
+            //}
+            //return false;
+        //}
         
         static void Main(string[] args)
         {
@@ -38,7 +38,29 @@ namespace Demo
             //Delegate
             //в тип данни Func може да пазим ламбда функции или обикновени функции
             //първо трябва да кажем какъв параметър връща функцията и след това типа на функцията
-            Func<int, bool> func = Print;
+            //Func<int, bool> func = Print;
+            //func(9);
+            //не приема никакви параметри и връща bool
+            //Func<bool> func = (Print) () => true;
+            
+            //Action - функции, които не връщат нищо
+            //Console.WriteLine() - приема string и не връща нищо
+            //Action<string> action = Console.WriteLine(); 
+            //Action<string> action = x => Console.WriteLine(x);
+            
+            //LINQ - вкарани в езика вградени заявки
+            //string text = "Pesho %123";
+            //преброй ми всички символи, които са букви
+            //var result = text.Count(s => char.IsLetter(s));
+            //преброй ми всички цифри
+            //var result = text.Count(s => char.IsDigit(s));
+            //Console.WriteLine(result);
+            
+            var numbers = new List<int>();
+            numbers.Add(5);
+            numbers.Add(5);
+            numbers.Add(5);
+            numbers.Add(5);
         }
     }
 }
