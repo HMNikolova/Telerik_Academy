@@ -56,11 +56,11 @@ namespace Demo
             //var result = text.Count(s => char.IsDigit(s));
             //Console.WriteLine(result);
             
-            var numbers = new List<int>();
-            numbers.Add(5);
-            numbers.Add(10);
-            numbers.Add(124);
-            numbers.Add(15);
+            //var numbers = new List<int>();
+            //numbers.Add(5);
+            //numbers.Add(10);
+            //numbers.Add(124);
+            //numbers.Add(15);
             //искам всички числа, които при деление на 5 имат остатък 0
             //var result = numbers.Where(n => n % 5 == 0);
             //или всяко число, което не се дели на 2
@@ -105,9 +105,9 @@ namespace Demo
             
             //изкарва дължините на стринговете -> 5,4,6
             var texts = new List<string>();
-            text.Add("Pesho");
-            text.Add("Ivan");
-            text.Add("Stamat");
+            texts.Add("Pesho");
+            texts.Add("Ivan");
+            texts.Add("Stamat");
             //var result = texts.Select(t => t.Length);
             //искам тези дължини да ми ги подредиш
             //var result = texts.Select(t => t.Length).OrderBy(l => l);
@@ -139,14 +139,27 @@ namespace Demo
                 //Console.WriteLine(number + 5);//така ще ни прибави 5 към всяко едно число
             //}
             
-            var texts = new List<string>();
-            text.Add("1");
-            text.Add("2");
-            text.Add("3");
+            //var texts = new List<string>();
+            //texts.Add("1");
+            //texts.Add("2");
+            //texts.Add("3");
             //var result = texts.Select(int.Parse);//съкратен запис
             //var result = texts.Select(t => int.Parse(t)).First().//от тук нататък не можем да правим нищо, защото това вече не е колекция
         
-            //1:47:18
+            //с ToList накрая си оправяме проблема, ако ни се кара, че иска лист    
+            //List<string> result = texts.OrderBy(t => t).Where(t => t[0] == 'P' && t[t.Length - 1] == 'P').ToList();
+            //ако ни трябва масив с ToArray() се оправят нещата
+            //string[] result = texts.OrderBy(t => t).Where(t => t[0] == 'P' && t[t.Length - 1] == 'P').ToArray();
+            //засега с var е достатъчно
+            //var result = texts.OrderBy(t => t).Where(t => t[0] == 'P' && t[t.Length - 1] == 'P');
+            var result = texts.OrderBy(t => t).Reverse();
+            //понеже Linq си има собствен reverse, трябва да се запише по следния начин, за да се оточни, че се извиква от Linq
+            //var result = texts.AsEnumerable().Reverse();
+            foreach (var item in result)
+            {
+                Console.WriteLine(item);
+            }
+
             
         }
     }
