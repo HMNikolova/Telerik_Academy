@@ -16,13 +16,27 @@ namespace Sorting
             students.Add(new Student { FirstName = "B", LastName = "T", Age = 5 });
             students.Add(new Student { FirstName = "C", LastName = "C", Age = 1 });
             students.Add(new Student { FirstName = "D", LastName = "B", Age = 11 });
+            //дай ми всички студенти, чиито FirstName е различен от "А", след това започни да ги подреждаш и накрая ми ги преброй, но ако ги преброяваме накрая няма да работи foreach
+            //var result = students.Where(st => st.FirstName != "A").OrderByDescending(st => st.LastName).ThenByDescending(st => st.FirstName).ThenByDescending(st => st.Age).Count();
+            //foreach (var student in result)
+            //{
+                //Console.WriteLine(student.LastName);
+            //}
+            
+            //ще ни го подреди отзад напред
+            //var result = students.OrderByDescending(st => st.LastName).ThenByDescending(st => st.FirstName).ThenByDescending(st => st.Age);
+            //foreach (var student in result)
+            //{
+                //Console.WriteLine(student.LastName);
+            //}
+            
             //сортиране по lastname, ако съвпадат след това ми ги подреди 
             //по firstname и ако пак съвпадат ми ги подреди по години
-            var result = students.OrderBy(st => st.LastName).ThenBy(st => st.FirstName).ThenBy(st => st.Age);
-            foreach (var student in result)
-            {
-                Console.WriteLine(student.LastName);
-            }
+            //var result = students.OrderBy(st => st.LastName).ThenBy(st => st.FirstName).ThenBy(st => st.Age);
+            //foreach (var student in result)
+            //{
+                //Console.WriteLine(student.LastName);
+            //}
             //var pets = new List<string>();
             
             //pets.Add("Lasi");
