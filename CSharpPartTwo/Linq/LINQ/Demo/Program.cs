@@ -58,9 +58,36 @@ namespace Demo
             
             var numbers = new List<int>();
             numbers.Add(5);
-            numbers.Add(5);
-            numbers.Add(5);
-            numbers.Add(5);
+            numbers.Add(10);
+            numbers.Add(124);
+            numbers.Add(15);
+            //искам всички числа, които при деление на 5 имат остатък 0
+            //var result = numbers.Where(n => n % 5 == 0);
+            //или всяко число, което не се дели на 2
+            //var result = numbers.Where(n => n % 2 != 0);
+            
+            //първото намерено число или дефолтното
+            //var first = numbers.Where(n => == 200).FirstOrDefault();
+            //може и без where 
+            //var first = numbers.FirstOrDefault(n => n != 5);
+            //var first = numbers.First(x => x > 100);
+            //var first = numbers.Last(x => x == 5);
+            //така ще гръмне и ще разберем, че има грешка
+            //var first = numbers.Where(n => == 200).First();
+            //така ще гръмне и ще разберем, че има грешка
+            //var first = numbers.Where(n => == 200).Last();
+            //последното намерено число или дефолтното
+            //var first = numbers.Where(n => == 200).LastDefault();
+            
+            //сортирай ми числата всяко по себе си и ми вземи първото
+            //var first = numbers.OrederBy(x => x).First();
+            //сортирай ми числата всяко по себе си в обратен ред и ми вземи първото
+            //var first = numbers.OrederByDescending(x => x).First();
+            
+            //foreach (var number in result)
+            //{
+                //Console.WriteLine(number);
+            //}
         }
     }
 }
