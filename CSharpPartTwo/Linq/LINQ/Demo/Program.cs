@@ -88,6 +88,66 @@ namespace Demo
             //{
                 //Console.WriteLine(number);
             //}
+            
+            
+            //Select() и Cast() може да прехвърлим един тип данни в друг
+            //var texts = new List<string>();
+            //text.Add("1");
+            //text.Add("2");
+            //text.Add("3");
+            //със Select() казваме какво точно искаме да селектираме от колекцията
+            //var result = texts.Select(t => int.Parse(t));
+            //var result = texts.Select(t => int.Parse(t + 6));//така ще ни залепи по една 6 зад всяко число
+            //foreach (var number in result)
+            //{
+                //Console.WriteLine(number + 5);//така ще ни прибави 5 към всяко едно число
+            //}
+            
+            //изкарва дължините на стринговете -> 5,4,6
+            var texts = new List<string>();
+            text.Add("Pesho");
+            text.Add("Ivan");
+            text.Add("Stamat");
+            //var result = texts.Select(t => t.Length);
+            //искам тези дължини да ми ги подредиш
+            //var result = texts.Select(t => t.Length).OrderBy(l => l);
+            //и искам пак да ми ги селектираш и да ми добавиш 12 за всеки
+            //var result = texts.Select(t => t.Length).OrderBy(l => l).Select(t => t + 12);
+            //селектирай ми ги по първа буква
+            //var result = texts.Select(t => t[0]);
+            //селектирай ми ги по първа буква
+            //var result = texts.Select(t => t.First());
+            //ако му кажем после Where, работим с върнатото от Selecta
+            //var result = texts.Select(t => t.First()).Where();
+            //так работим с върнатото от Selecta
+            //var result = texts.Where(t[0] != 'P').Select(t => t.First());
+            //така ще ни изкара само Ivan
+            //var result = texts.OrderBy(t => t.Length).Where(t[0] != 'P').First());
+            //подреди ми го по дължина, после по първа буква
+            //var result = texts.OrderByDescending(t => t.Length).ThenBy(t => t[0]);
+            //var result = texts.OrderByDescending(t => t.Length).ThenByDescending(t => t[0]);
+            
+            //Any и All, вървят ръка за ръка и връщат bool
+            //дали някои елемент от колекцията отговаря на дадено условие
+            //връща true ако поне едното е истина
+            //bool result = texts.Any(t => t[0] == 'P');
+            //Console.WriteLine(result);
+            //за да върне true трябва всички да започват с 'P'
+            //bool result = texts.All(t => t[0] == 'P');
+            //foreach (var number in result)
+            //{
+                //Console.WriteLine(number + 5);//така ще ни прибави 5 към всяко едно число
+            //}
+            
+            var texts = new List<string>();
+            text.Add("1");
+            text.Add("2");
+            text.Add("3");
+            //var result = texts.Select(int.Parse);//съкратен запис
+            //var result = texts.Select(t => int.Parse(t)).First().//от тук нататък не можем да правим нищо, защото това вече не е колекция
+        
+            //1:47:18
+            
         }
     }
 }
