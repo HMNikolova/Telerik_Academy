@@ -1,0 +1,5 @@
+﻿This is text, from first line.
+This is the second line text.
+Finally we have the third line text!
+Start this thing little starter
+hello finish this start!!

@@ -1,0 +1,9 @@
+<?xml version="1.0"> This is  
+<student> This  line2test
+<name>Pesho</name>test
+<age>21</age>
+test<interestscount="3"><interest>Games</interest>
+<interest>C#</interest>
+<interest>Java</interest>
+</interests>
+</student>
