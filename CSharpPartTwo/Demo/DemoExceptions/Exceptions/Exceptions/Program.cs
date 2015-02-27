@@ -22,7 +22,9 @@ namespace Exceptions
             }
             catch (DivideByZeroException)
             {
-                Console.WriteLine("You cannot enter zero!");
+                //Console.WriteLine("You cannot enter zero!");
+                //Console.WriteLine(ex.Message);//Message - показва типа на грешката
+                //Console.WriteLine(ex.StackTrace);//StackTrace - в кой метод е гръмнал exception
             }
         }
     }
