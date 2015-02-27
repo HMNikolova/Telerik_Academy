@@ -30,6 +30,23 @@ public class Program
 
             int a = int.Parse(Console.ReadLine());
             Divide(a);
+
+            try
+            {
+                int a = int.Parse(Console.ReadLine());
+                int result = 10 / a;
+            }
+            catch (FormatException)
+            {
+
+                Console.WriteLine("Input is not digit!");
+            }
+            catch (DivideByZeroException)
+            {
+                //Console.WriteLine("You cannot enter zero!");
+                //Console.WriteLine(ex.Message);//Message - показва типа на грешката
+                //Console.WriteLine(ex.StackTrace);//StackTrace - в кой метод е гръмнал exception
+            }
         }
         catch (Exception ex)
         {
