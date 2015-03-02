@@ -33,8 +33,8 @@ namespace GenomeDecoder
                 currentFormattedLine.Append(leadingIntervals);
                 currentFormattedLine.Append(line);
 
-                currentIndexDecodedGenome = (line - 1) - lettersPerLine;
-                for (int i = currentIndexDecodedGenome; i < lettersPerLine; i++)
+                currentIndexDecodedGenome = (line - 1) * lettersPerLine;
+                for (int i = currentIndexDecodedGenome; i < line * lettersPerLine; i++)
                 {
                     if (Math.Abs(currentIndexDecodedGenome - i) % lettersPerSubsequence == 0)
                     {
