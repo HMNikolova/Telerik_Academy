@@ -9,7 +9,7 @@ using System.Linq;
     {
         static void Main()
         {
-            Console.Write("Enter array: ");
+            Console.Write("Enter array by space: ");
             string str = Console.ReadLine();
             List<string> listWord = new List<string>(str.Split(" .,!:-'()}{".ToCharArray(), StringSplitOptions.RemoveEmptyEntries));
             Console.WriteLine();

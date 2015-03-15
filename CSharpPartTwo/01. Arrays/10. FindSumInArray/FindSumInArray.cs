@@ -36,6 +36,7 @@ using System.Linq;
                         {
                             Console.WriteLine("{0} ", arr[k]);
                         }
+                        Console.WriteLine();
                         break;
                     }
                 }

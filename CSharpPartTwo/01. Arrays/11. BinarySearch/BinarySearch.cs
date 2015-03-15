@@ -9,7 +9,7 @@ using System.Linq;
     {
         static void Main()
         {
-            int[] n = Enumerable.Range(-20, 40).ToArray();
+            int[] n = Enumerable.Range(-20, 40).ToArray();//makes us an array of 40 index (-20 start, 40 is range)
             Console.WriteLine("Enter key:");
             int key = int.Parse(Console.ReadLine());
             int lowerBound = 0, upperBound = n.Length, index = lowerBound + (upperBound - lowerBound) / 2;

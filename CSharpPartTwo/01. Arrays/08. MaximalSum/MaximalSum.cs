@@ -9,7 +9,15 @@ class MaximalSum
 {
     static void Main()
     {
-        int[] array = { 2, 3, -6, -1, 2, -1, 6, 4, -8, 8 };
+        Console.WriteLine("Calculating the maximal sum of sequance in an array.");
+        Console.Write("Enter size of the array: ");
+        int n = int.Parse(Console.ReadLine());
+        int[] array = new int[n];
+        for (int i = 0; i < n; i++)
+        {
+            Console.Write("arr[{0}] = ", i);
+            array[i] = int.Parse(Console.ReadLine());
+        }
         long maxSum = array[0];
         long currentSum = array[0];
         int currentSeqStart = 0;
@@ -46,7 +54,8 @@ class MaximalSum
         }
 
         Console.WriteLine("The max sum is {0}.", maxSum);
-        Console.WriteLine( "Sequence in the array [{0}] is [{1}]", String.Join(", ", array), String.Join(", ", maxSequence));
+        Console.WriteLine("Sequence in the array [{0}] is [{1}]", String.Join(", ", array), String.Join(", ", maxSequence));
+       
         }
     }
 

@@ -22,12 +22,12 @@ class BinarySearch
 
         Array.Sort(array);
 
-        Console.WriteLine("This is the sorted array:");
+        Console.WriteLine("This is the sorted array: {0}", String.Join(", ", array));
 
-        for (int i = 0; i < array.Length; i++)
-        {
-            Console.Write("{0} ", array[i]);
-        }
+        //for (int i = 0; i < array.Length; i++)
+        //{
+        //    Console.Write("{0} ", array[i]);
+        //}
         Console.WriteLine();
 
         if (array[0] > k)

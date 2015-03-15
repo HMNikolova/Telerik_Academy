@@ -1,140 +1,184 @@
-﻿using System;
+﻿﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+//Write a program that fills and prints a matrix of size (n, n).
 
 class FillTheMatrix
 {
     static void Main()
     {
-        //•	Write a program that fills and prints a matrix of size (n, n) 
 
-        Console.Write("Enter n: ");
+        Console.Write("Enter the number of rows and coloumns of the matrix: ");
         int n = int.Parse(Console.ReadLine());
         int[,] matrix = new int[n, n];
+        int digit = 1;
 
-        Console.WriteLine("Printing matrix a):\n ");
+        // Variant A
 
-        int count = 1;
-
-        for (int col = 0; col < n; col++)
+        for (int col = 0; col < n; col++)       //Filling the matrix
         {
             for (int row = 0; row < n; row++)
             {
-                matrix[row, col] = count;
-                count++;
+                matrix[col, row] = digit;
+                digit++;
             }
         }
 
-        PrintingMatrix(n, matrix);
 
-        Console.WriteLine("\nPrinting matrix b):\n ");
+        for (int col = 0; col < n; col++)           //Printing
+        {
+            for (int row = 0; row < n; row++)
+            {
+                Console.Write("{0, 4}", matrix[row, col]);
+            }
+            Console.WriteLine();
+        }
+        digit = 1;
+        Console.WriteLine();
 
-        count = 1;
 
-        for (int col = 0; col < n; col++)
+
+        // Variant B
+
+        for (int col = 0; col < n; col++)       //Filling the matrix
         {
             if (col % 2 == 0)
             {
                 for (int row = 0; row < n; row++)
                 {
-                    matrix[row, col] = count;
-                    count++;
+                    matrix[col, row] = digit;
+                    digit++;
                 }
             }
             else
             {
                 for (int row = n - 1; row >= 0; row--)
                 {
-                    matrix[row, col] = count;
-                    count++;
+                    matrix[col, row] = digit;
+                    digit++;
                 }
             }
         }
 
-        PrintingMatrix(n, matrix);
-
-        Console.WriteLine("\nPrinting matrix c):\n ");
-
-        count = 1;
-        int r = n - 1;
-        int c = 0;
-
-        for (int i = 0; i < n * n; i++)
+        for (int col = 0; col < n; col++)           //Printing
         {
-            matrix[r, c] = count;
-            r++;
-            c++;
-            count++;
-
-            if (r == n || c == n)
+            for (int row = 0; row < n; row++)
             {
-                r--;
-                if (c == n)
+                Console.Write("{0, 4}", matrix[row, col]);
+            }
+            Console.WriteLine();
+        }
+        digit = 1;
+        Console.WriteLine();
+
+
+
+        // Variant C
+
+        int Row = n - 1;
+        int Col = 0;
+        int startRow = n - 1;
+        int startCol = 0;
+
+        while (digit < n * n)
+        {
+            if (Row == (n - 1) && Col < (n - 1))        //Filling matrix
+            {
+                if (digit == 1)
                 {
-                    r--;
-                    c--;
+                    matrix[Col, Row] = digit;
                 }
-                while (r - 1 >= 0 && c - 1 >= 0)
+                startRow--;
+                startCol = 0;
+                Row = startRow;
+                Col = startCol;
+                digit++;
+                matrix[Col, Row] = digit;
+
+                while (Row < (n - 1) && Col < (n - 1))
                 {
-                    r--;
-                    c--;
+                    Row++;
+                    Col++;
+                    digit++;
+                    matrix[Col, Row] = digit;
+                }
+            }
+            if (Row <= (n - 1) && Col == (n - 1))
+            {
+                startRow = 0;
+                startCol++;
+                Row = startRow;
+                Col = startCol;
+                digit++;
+                matrix[Col, Row] = digit;
+
+                while (Col < (n - 1))
+                {
+                    Col++;
+                    Row++;
+                    digit++;
+                    matrix[Col, Row] = digit;
                 }
             }
         }
-
-        PrintingMatrix(n, matrix);
-
-        Console.WriteLine("\nPrinting matrix d):\n ");
-
-        r = 0;
-        c = 0;
-        int maxRow = n - 1;
-        int maxCol = n - 1;
-        count = 1;
-
-        do
+        for (int c = 0; c < n; c++)           //Printing
         {
-            for (int i = r; i <= maxRow; i++)
+            for (int r = 0; r < n; r++)
             {
-                matrix[i, c] = count;
-                count++;
+                Console.Write("{0, 4}", matrix[r, c]);
             }
-            c++;
+            Console.WriteLine();
+        }
+        digit = 1;
+        Console.WriteLine();
 
-            for (int i = c; i <= maxCol; i++)
-            {
-                matrix[maxRow, i] = count;
-                count++;
-            }
-            maxRow--;
 
-            for (int i = maxRow; i >= r; i--)
-            {
-                matrix[i, maxCol] = count;
-                count++;
-            }
-            maxCol--;
 
-            for (int i = maxCol; i >= c; i--)
-            {
-                matrix[r, i] = count;
-                count++;
-            }
-            r++;
 
-        } while (count <= n * n);
+        // Variant D
 
-        PrintingMatrix(n, matrix);
-    }
-
-    static void PrintingMatrix(int n, int[,] matrix)
-    {
-        for (int row = 0; row < n; row++)
+        int offset = 0;
+        int ROW = 0;
+        int COL = 0;
+        while (digit <= n * n)            //Filling matrix
         {
-            for (int col = 0; col < n; col++)
+            for (ROW = offset; ROW < n - offset; ROW++)
             {
-                Console.Write("{0,4}", matrix[row, col]);
+                COL = offset;
+                matrix[ROW, COL] = digit;
+                digit++;
+            }
+            for (COL = 1 + offset; COL < n - offset; COL++)
+            {
+                ROW = n - 1 - offset;
+                matrix[ROW, COL] = digit;
+                digit++;
+            }
+            for (ROW = n - 2 - offset; ROW >= offset; ROW--)
+            {
+                COL = n - 1 - offset;
+                matrix[ROW, COL] = digit;
+                digit++;
+            }
+            for (COL = n - 2 - offset; COL >= offset + 1; COL--)
+            {
+                ROW = offset;
+                matrix[ROW, COL] = digit;
+                digit++;
+            }
+            offset++;
+        }
+
+        for (int irow = 0; irow < n; irow++)           //Printing
+        {
+            for (int column = 0; column < n; column++)
+            {
+                Console.Write("{0, 4}", matrix[irow, column]);
             }
             Console.WriteLine();
         }
     }
 }
-
