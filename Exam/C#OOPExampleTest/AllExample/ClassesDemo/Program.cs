@@ -35,7 +35,18 @@
             stackOfPoints.Push(new Point(7, 7));
             Console.WriteLine(stackOfPoints.Pop());//по същия начин си махаме точката 7,7
             Console.WriteLine(stackOfPoints.Pop());//още един път ако поискаме да ни извади последния елемент ни вади 6,6
-
+            
+            //мога да си ги изкарам всички елементи
+            for (int i = 0; i < stackOfPoints.Count; i++)
+            {
+                Console.WriteLine(stackOfPoints[i]);
+            }
+            
+            //Мога да кажа дай ми точката на втория индекс в Point
+            Console.WriteLine(stackOfPoints[2]);
+            //или така, което е същото
+            //Console.WriteLine(stackOfPoints.GetPointAtIndex(2));
+            
             //за да мога да използвам Point, отивам в класа, където е създадена Point
             int res = Comparer<Point>(stackOfPoints.Pop(), stackOfPoints.Pop());
             Console.WriteLine(res);
@@ -43,7 +54,15 @@
             //да работим с повече типове
             //int res1 = Comparer1<Point, int, string>(stackOfPoints.Pop(), stackOfPoints.Pop());
             //Console.WriteLine(res1);
-
+            
+            //матрица от Point
+            Matrix<Point> matr = new Matrix<Point>(2,3);
+            //дай ми това, което се намира на първи ред втора колона
+            Console.WriteLine(matr[1,2]);
+            matr[1,2] = new Point(2,3);
+            //Console.WriteLine(matr[1,2]);//тук вече setter-a ми позволява на точката 1,2 стойността да е 2,3
+            Console.WriteLine(matr * 3);
+            
             Dictionary<int, string> dict = new Dictionary<int, string>();
 
             ////Point p1 = new Point(2, 4);//(в struct,а не в class) остава си 2,4, тъй като когато аз подавам стойностен тип(int,double...) тяхната стойност се копира, т.е. когато влезна в метода CalculateDistance   
