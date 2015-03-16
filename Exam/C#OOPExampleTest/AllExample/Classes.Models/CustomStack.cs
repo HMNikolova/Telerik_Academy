@@ -76,7 +76,7 @@
         //с this.[index] аз извиквам горния индексатор
         public T GetPointAtIndex(int index)
         {
-            return this.[index];
+            return this.arr[index];
             
         }
         

@@ -42,7 +42,7 @@ namespace Classes.Models
                 {
                     sb.Append(this.matrix[i, j]);
                 }
-                sb.AppnedLine();
+                sb.AppendLine();
             }
             return sb.ToString();
         }
