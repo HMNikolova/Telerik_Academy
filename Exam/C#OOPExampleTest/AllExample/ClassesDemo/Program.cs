@@ -4,6 +4,8 @@
     using Classes.Models;
     using System;
     using System.Collections.Generic;
+    //ако имаме два класа с едно и също име и стане конфликт може да го решим по следния начин
+    //using Point2D = Classes.Models.Point;
 
     class Program
     {
