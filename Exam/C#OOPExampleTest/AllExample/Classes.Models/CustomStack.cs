@@ -51,7 +51,35 @@
                 this.Push(element);
             }
         }
-
+        
+        //индексация
+        //някой ако се опита да достъпи индексатора да му каже това все още не е инплементирано
+        //public T this[int index, string descrip]{
+        
+        //проверка, ако някой се опита да достъпи индекс, който е повече от моя акаунт
+        //за да не трябва да затривам елементите, които сме Pop-нали
+        public T this[int index]{
+            //get{ throw new NotImplementedException();}
+            //set{ throw new NotImplementedException();}
+            get
+            {
+               if (index < 0 || index >= this.nextIndex)
+               {
+                   throw new ArgumentOutOfRangeException();
+               }
+               
+               return this.arr[index];
+            }
+        } 
+        
+        //може да си преизползваме самия индекс
+        //с this.[index] аз извиквам горния индексатор
+        public T GetPointAtIndex(int index)
+        {
+            return this.[index];
+            
+        }
+        
         private void DoubleSize()
         { 
             T[] newArr = new T[this.arr.Length * 2];
@@ -80,7 +108,9 @@
         }
 
         #endregion
-
+        
+        
+        
         public T Last
         {
             get { return this.Top(); }
