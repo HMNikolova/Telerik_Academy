@@ -1,4 +1,4 @@
-﻿namespace NumeralSystems
+namespace NumeralSystems
 {
     public class Pesho
     {
