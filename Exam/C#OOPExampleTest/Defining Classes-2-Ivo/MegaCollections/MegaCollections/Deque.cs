@@ -73,6 +73,12 @@ namespace MegaCollections
         
         public T PeekFront()
         {
+            //ако няма нищо вътре гръмни
+            if (this.Count == 0)
+            {
+                throw new InvalidOperationException("Deque is empty.");
+                
+            }
             //понеже вървим от средата назад и ако имаме един елемент(примерно числото 5) в frontIndex, а масива е с 4 елемента
             // за да ни го покаже трябва да напишем това, което е на долния ред
              return this.data[frontIndex + 1];
@@ -80,9 +86,14 @@ namespace MegaCollections
         
         public T PeekBack()
         {
+            if (this.Count == 0)
+            {
+                throw new InvalidOperationException("Deque is empty.");
+                
+            }
             //и ето го пък обратиня вариант, ако сме от средата надясно
             return this.data[backIndex - 1];
         }
-         //1:50:12
+         //1:55:10
     }
 }
