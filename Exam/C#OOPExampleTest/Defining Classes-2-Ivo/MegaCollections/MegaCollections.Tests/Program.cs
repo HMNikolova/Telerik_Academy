@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace MegaCollections.Tests
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
+            //първо си добавяме референция към другия обект, за да мога да си довавям класове вътре
+            Deque<int> dequeOfIntegers = new Deque<int>(200);
+            
         }
     }
 }
