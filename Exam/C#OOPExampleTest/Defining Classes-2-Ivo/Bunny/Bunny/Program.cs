@@ -34,7 +34,13 @@
             pt.Y = 10;
 
             //добавяме втори конструктор, който да приема параметри
-            //53:50
+            Point secondPoint = new Point(0,0,0);
+            secondPoint.Add(1,2,3);
+            //това нещо ни вади 1
+            Console.WriteLine(secondPoint.X);
+            
+            ///може да си извикаме статичния метод така
+            Point.Calculate(pt, secondPoint);
         }
     }
 }
