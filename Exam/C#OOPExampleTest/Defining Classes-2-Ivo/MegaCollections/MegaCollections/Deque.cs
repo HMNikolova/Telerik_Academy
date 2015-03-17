@@ -133,6 +133,7 @@ namespace MegaCollections
             T[] newData = new T[newSize];//новия масив 
 
             //2:27:00
+
         }
     }
 }

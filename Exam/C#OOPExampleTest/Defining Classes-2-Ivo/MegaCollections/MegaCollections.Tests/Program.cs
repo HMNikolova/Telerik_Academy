@@ -24,6 +24,7 @@ namespace MegaCollections.Tests
 
             System.Console.WriteLine(deque.Count);
 
+
             //int backRemove = deque.RemoveBack();
             ////погледни и ми дай стойността, която е най-отпред на този дек(Deque), обаче не я махай
             //int frontPeek = deque.PeekFront();
