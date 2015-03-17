@@ -21,15 +21,15 @@ namespace MegaCollections
         
         public Deque(uint InitialSize)
         {
-            //най-малката стойност е 2(this.data.Length) и го / 2 - 1
+            //най-малката стойност е 2(this.Capacity) и го / 2 - 1
             if (InitialSize < 2)
             {
                 throw new IndexOutOfRangeException("Initial size of Deque must be bigger than 2.");
             }
             this.data = new T[InitialSize];
             //инициализираме си началото и края на масива
-            this.frontIndex = this.data.Length / 2 - 1;
-            this.backIndex = this.data.Length / 2;
+            this.frontIndex = this.Capacity / 2 - 1;
+            this.backIndex = this.Capacity / 2;
         }
         //глупаво е да може да set-вам count
         public int Count 
@@ -51,24 +51,54 @@ namespace MegaCollections
             }
         }
         
-        public void AddFront(Т element)
+        public void AddFront(T element)
         {
-            throw new NotImplementedException();
+            //проверяваме дали текущия елемент не е извън масива, защото, ако текущия елемент е на масива може спокойно да го добавим
+            //ако имаме Deque с 16 елемента и напълни точно 16, няма нужда да го resize-ваме
+            if (this.frontIndex < 0)
+            {
+                this.ResizeData();
+            }
+            //след като го увеличиш или и да не го увеличиш, може да запишеш някаква стойност
+            this.data[this.frontIndex] = element;
+            this.frontIndex--;
         }
         
-        public void AddBack(Т element)
+        public void AddBack(T element)
         {
-            throw new NotImplementedException();
+            //ако е равно на капацитета трябва да увеличавам
+            if (this.backIndex == this.Capacity)
+            {
+                this.ResizeData();
+            }
+
+            this.data[this.backIndex] = element;
+            this.backIndex++;
         }
         
         public T RemoveFront()
         {
-             throw new NotImplementedException();
+            //проверка дали има какво да извади
+            if (this.Count == 0)
+            {
+                throw new InvalidOperationException("Deque is empty.");
+            }
+            //за да изкарам индекс от масиваа и да върнем числото от него като резултат
+            //ако имаме масив с 4 елемента, започваме от средата наляво и примерно имаме 3(на първия индекс) и нулевия индекс, който е празен
+            //първо увеличаваме frontIndex, той(индекса) става равен на 1
+            this.frontIndex++;
+            //връщаме резултата-тройката, и следващия път ще записвам на индекс 1
+            return this.data[frontIndex];
         }
         
         public T RemoveBack()
         {
-             throw new NotImplementedException();
+            if (this.Count == 0)
+            {
+                throw new InvalidOperationException("Deque is empty.");
+            }
+            this.backIndex--;
+            return this.data[backIndex];
         }
         
         public T PeekFront()
@@ -94,6 +124,15 @@ namespace MegaCollections
             //и ето го пък обратиня вариант, ако сме от средата надясно
             return this.data[backIndex - 1];
         }
-         //1:55:10
+
+        //ресайзваме когато трябва да добавим елемент и няма място за него
+        private void ResizeData()
+        {
+            //ако сме били на 8 ще стане на 16
+            int newSize = this.Capacity * 2;
+            T[] newData = new T[newSize];//новия масив 
+
+            //2:27:00
+        }
     }
 }
