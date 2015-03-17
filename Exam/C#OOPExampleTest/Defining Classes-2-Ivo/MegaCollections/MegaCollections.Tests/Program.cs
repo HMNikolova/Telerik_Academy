@@ -5,7 +5,7 @@ namespace MegaCollections.Tests
         static void Main()
         {
             //първо си добавяме референция към другия обект, за да мога да си довавям класове вътре
-            Deque<int> dequeOfIntegers = new Deque<int>(200);
+            Deque<int> dequeOfIntegers = new Deque<int>();
             
         }
     }
