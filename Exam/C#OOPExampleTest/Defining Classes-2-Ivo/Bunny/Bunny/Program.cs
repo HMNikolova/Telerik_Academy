@@ -2,14 +2,21 @@
 {
     using System;
     using System.Collections;
+    
     using NumeralSystems;
     //ако искам да използвам всичко от папката People, трябва да му допиша
     using NumeralSystems.People;
     using NumeralSystems.People.Students;
+    //собствени using-ги, ако имаме еднакви имена на класове
+    //using BaiPesho =  Bunny.People.Pesho;
+    
     class Program
     {
         public static void Main()
         {
+            //и ако му кажа BaiPesho то се сеща, кой клас да си ползва
+            //BaiPesho baiPesho = new BaiPesho();
+            
             //за да мога да достъпя полето Fuel, преди това трябва да си създам самолет
             //създавам си нов самолет
             AirCraft boing = new AirCraft();
@@ -41,6 +48,11 @@
             
             ///може да си извикаме статичния метод така
             Point.Calculate(pt, secondPoint);
+            
+            //шаблонен тип или generic тип
+            //в зависимост какъв тип му подам самия клас работи с такъв тип
+            //List<int> listOfIntegers = new List<int>();
+            //List<string> listOfStrings = new List<string>();
         }
     }
 }
