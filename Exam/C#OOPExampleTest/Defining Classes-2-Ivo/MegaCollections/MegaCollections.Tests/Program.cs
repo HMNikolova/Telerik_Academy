@@ -18,7 +18,8 @@ namespace MegaCollections.Tests
             //дай ми колко елемента пазя вътре
             int elements = dequeOfIntegers.Count;
             int maxCapacity = dequeOfIntegers.Capacity;
-            
+            //може да си направим прайвит метод, който да ни проверява дали масива е празен
+            //bool isEmpty = dequeOfIntegers.IsEmpty;
             
         }
     }
