@@ -1,12 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace TestGenerics
 {
-    class Bunny
+    //Bunny наследява Animal
+    class Bunny : Animal
     {
+        public Bunny ()
+        {
+            
+        }
+        
+        //и мога да използвам всичко, което има Animal
+        public Bunny (string name)
+        {
+            //на this. вече имаме Name, защото го взима от Animal
+            //по този начин не се преповтаря код
+            this.Name = name;
+        }
+        
+        public void Add()
+        {
+            
+        }
     }
 }
