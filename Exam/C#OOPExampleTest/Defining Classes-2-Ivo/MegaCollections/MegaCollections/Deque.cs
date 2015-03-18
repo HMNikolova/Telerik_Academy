@@ -132,7 +132,31 @@ namespace MegaCollections
             int newSize = this.Capacity * 2;
             T[] newData = new T[newSize];//новия масив 
 
-            //2:27:00
+            //стария индекс (намираме се в средата на стария масив)
+            //тръгваме от средата и един по един трябва да копираме елементите
+            int currentFrontIndex = this.Capacity / 2 - 1;
+            int currentBackIndex = this.Capacity / 2;
+            
+            //пазиме къде ще записваме данните
+            int newFrontIndex = newSize / 2 - 1;
+            int newBackIndex = newSize / 2;
+            
+            //имаме цикъл, който върви и копира
+            while (true)
+            {
+                //прекъсване на цикъла
+                if (currentFrontIndex <= this.frontIndex &&
+                    currentBackIndex => this.backIndex)
+                    {
+                        break;
+                    }
+                
+                if (currentFrontIndex > this.frontIndex)
+                //копиране
+                {
+                    
+                }
+            }
 
         }
     }
