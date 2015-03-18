@@ -55,6 +55,17 @@ namespace MegaCollections.Tests
             }
             
             System.Console.WriteLine(deque.Count);
+            
+            //индексираме като при масивите, може да индексираме повече от един елемент
+            deque[0] = 500;
+            System.Console.WriteLine(deque[0]);
+            
+            //оператори
+            Deque<int> anotherDeque = new Deque<int>();
+            
+            Deque<int> result = deque + anotherDeque;
+            
+            3:20:00
         }
     }
 }
