@@ -5,7 +5,7 @@ namespace MegaCollections.Tests
         static void Main()
         {
             //първо си добавяме референция към другия обект, за да мога да си довавям класове вътре
-            Deque<int> deque = new Deque<int>();
+            Deque<int> deque = new Deque<int>(40);
             //искаме да добавяме отпред и отзад
             deque.AddFront(5);//5
             deque.AddFront(10);//10 5
@@ -34,6 +34,22 @@ namespace MegaCollections.Tests
             ////може да си направим прайвит метод, който да ни проверява дали масива е празен
             ////bool isEmpty = deque.IsEmpty;
             
+            for (int = 0; i < 20; i++)
+            {
+                deque.AddFront(i);
+            }
+            
+            for (int = 0; i < 20; i++)
+            {
+                deque.AddBack(i);
+            }
+            //задавам му 40 елемента и му казвам махни ми 5 отпред
+            for (int = 0; i < 5; i++)
+            {
+                deque.RemoveFront();
+            }
+            
+            System.Console.WriteLine(deque.Count);
         }
     }
 }
