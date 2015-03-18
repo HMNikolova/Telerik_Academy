@@ -126,12 +126,12 @@ namespace MegaCollections
         }
         
         //индексатор - връща ни Т
-        public T this [int index]
+        public T this[int index]
         {
             get 
             {
                 //първо си правим проверка дали има индекс въобще
-                if (index <= this.frontIndex || index >= this.backIndex)
+                if (index < 0 || index >= this.Count)
                 {
                     throw new IndexOutOfRangeException("Index is out of range.");
                 }
@@ -139,7 +139,7 @@ namespace MegaCollections
             }
             set
             {
-                if (index <= this.frontIndex || index >= this.backIndex)
+                if (index < 0 || index >= this.Count)
                 {
                     throw new IndexOutOfRangeException("Index is out of range.");
                 }
@@ -198,7 +198,7 @@ namespace MegaCollections
             this.frontIndex = newFrontIndex;
             this.backIndex = newBackIndex;
             
-            //3:15:00
+            
         }
     }
 }
