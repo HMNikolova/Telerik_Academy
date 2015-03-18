@@ -147,6 +147,26 @@ namespace MegaCollections
                 this.data[this.frontIndex + index + 1] = value;
             }
         }
+
+        //създаваме си оператор +, който взима два дека(deque)
+        public static Deque<T> operator +(Deque<T> first, Deque<T> second)
+        {
+            //throw new NotImplementedException();
+            //първо трябва да си създам нов дек от Т, след това трябва в тозии резултат да сложа всички стойности на първия и да добавя след това всички стойности на втория
+            Deque<T> result = new Deque<T>();
+
+            //хващам първия и ги добавям на крайния резултат всичките му елементи
+            for (int i = 0; i < first.Count; i++)
+            {
+                result.AddBack(first[i]);
+            }
+            //хващам втория добавям ги и тях
+            for (int i = 0; i < second.Count; i++)
+            {
+                result.AddBack(second[i]);
+            }
+            return result;
+        }
         
         //ресайзваме когато трябва да добавим елемент и няма място за него
         private void ResizeData()

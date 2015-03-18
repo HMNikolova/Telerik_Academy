@@ -30,10 +30,10 @@ namespace TestGenerics
         //може да кажем че търсим мах от Т, като подадем масив от Т и ни върне максималния елемент
         //т.е. не е нужно класа да ми е Generic
         //може също да ограничаваме
-        //static void Max<T>(T[] data) where T : struct
+        //static T Max<T>(T[] data) where T : struct
         //компилатора се сеща дори и да не е описано, че горе му подавам масив от Int (при методи става, при листове не)
         
-        static void Max<T>(T[] data)
+        static T Max<T>(T[] data)
         {
             return data[0];
         }
