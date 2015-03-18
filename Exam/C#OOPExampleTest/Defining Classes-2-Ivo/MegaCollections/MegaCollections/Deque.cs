@@ -124,7 +124,30 @@ namespace MegaCollections
             //и ето го пък обратиня вариант, ако сме от средата надясно
             return this.data[backIndex - 1];
         }
-
+        
+        //индексатор - връща ни Т
+        public T this [int index]
+        {
+            get 
+            {
+                //първо си правим проверка дали има индекс въобще
+                if (index <= this.frontIndex || index >= this.backIndex)
+                {
+                    throw new IndexOutOfRangeException("Index is out of range.");
+                }
+                return this.data[frontIndex + index + 1];
+            }
+            set
+            {
+                if (index <= this.frontIndex || index >= this.backIndex)
+                {
+                    throw new IndexOutOfRangeException("Index is out of range.");
+                }
+                
+                this.data[this.frontIndex + index + 1] = value;
+            }
+        }
+        
         //ресайзваме когато трябва да добавим елемент и няма място за него
         private void ResizeData()
         {
@@ -174,6 +197,8 @@ namespace MegaCollections
             //трябва да сетнем новите индекси
             this.frontIndex = newFrontIndex;
             this.backIndex = newBackIndex;
+            
+            //3:15:00
         }
     }
 }
