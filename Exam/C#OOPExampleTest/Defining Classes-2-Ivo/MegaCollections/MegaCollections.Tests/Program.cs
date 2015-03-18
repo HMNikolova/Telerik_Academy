@@ -46,7 +46,12 @@ namespace MegaCollections.Tests
             //задавам му 40 елемента и му казвам махни ми 5 отпред
             for (int = 0; i < 5; i++)
             {
-                deque.RemoveFront();
+                System.Console.WriteLine(deque.RemoveFront());
+            }
+            
+            for (int = 0; i < 5; i++)
+            {
+                System.Console.WriteLine(deque.RemoveBack());
             }
             
             System.Console.WriteLine(deque.Count);
