@@ -16,7 +16,7 @@ namespace TestGenerics
     //и тогава може да кажа това на долните редове, защото си гарантирам, че имам празен конструктор
     //public GenericClass()
        //{
-           //someData = new T()
+           //someData = new T();
        //}
     
     {
