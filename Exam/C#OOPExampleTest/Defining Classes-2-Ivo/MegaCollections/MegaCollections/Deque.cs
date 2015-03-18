@@ -146,7 +146,7 @@ namespace MegaCollections
             {
                 //прекъсване на цикъла
                 if (currentFrontIndex <= this.frontIndex &&
-                    currentBackIndex => this.backIndex)
+                    currentBackIndex >= this.backIndex)
                     {
                         break;
                     }
@@ -154,10 +154,26 @@ namespace MegaCollections
                 if (currentFrontIndex > this.frontIndex)
                 //копиране
                 {
+                    newData[newFrontIndex] = this.data[currentFrontIndex];
+                    newFrontIndex--;
                     
                 }
+                
+                if (currentBackIndex > this.backIndex)
+                //копиране
+                {
+                    newData[newBackIndex] = this.data[currentBackIndex];
+                    newBackIndex++;
+                    
+                }
+                currentBackIndex++;
+                currentFrontIndex--;
             }
-
+            
+            this.data = newData;
+            //трябва да сетнем новите индекси
+            this.frontIndex = newFrontIndex;
+            this.backIndex = newBackIndex;
         }
     }
 }
