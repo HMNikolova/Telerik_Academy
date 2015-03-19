@@ -64,7 +64,8 @@ namespace MegaCollections.Tests
 
             deque.AddFront(10);
             deque.AddBack(50);//10 50
-
+            //по смислена операция е, в скобите да му подадем лист от интове и всичките ги добавя
+            //deque.AddRange();
             Deque<int> anotherDeque = new Deque<int>();
 
             //създаваме си оператор +, който взима два дека(deque)
@@ -74,7 +75,6 @@ namespace MegaCollections.Tests
             //и на края ще получи един общ с първите и вторите елементи едно до друго
             Deque<int> result = deque + anotherDeque;//10 50 10 5
             
-            //3:30:00
         }
     }
 }
