@@ -14,6 +14,10 @@ namespace Profiler
             //profile.DateOfBirth = new DateTime(2001,1,1);
             //влез в този метод
             Save(profile);
+            
+            //Convert.ChangeType - може да сменяме типа
+            
+            UserProfile loadProfile = Load();
         }
         
         static void Save(UserProfile profile)
@@ -60,6 +64,31 @@ namespace Profiler
             UserProfile profile = new UserProfile();
             using (reader)
             {
+                //трябва ми типа на UserProfile, казвам му вземи ми го
+                Type profileType = typeof(UserProfile);
+                //прочети ред по ред и ми ги сплитни
+                string currentData = reader.ReadLine();
+                //първата стойност (profileType) трябва да намеря такова пропърти в моя тип
+                //profileType ми дава името на пропъртито, което търся
+                
+                //докато не си null 
+                while (!string.IsNullOrEmpty(currentData))
+                {
+                    string[] values = currentData.Split(' ');
+                    //хващам първата стойност (тя винаги ще ми бъде FirstName)
+                    //първата част е името на това пропърти, което ровичкаме
+                    string propertyName = values[0];
+                    //второто е стойността
+                    string propertyValue value[1]; 
+                    
+                    //Изваждаме конскретно пропърти по име
+                    var property = profileType.GetProperty(propertyName);
+                    //на това пропърти трябва да му намерим set value, иска ни две неща, на кой обект да сетне това value(profile) и стойността (propertyValue)
+                    property.SetValue(profile, propertyValue);
+                    
+                    //ми чети текущия ред
+                    currentData = reader.ReadLine();
+                }
                 //profile.FirstName = reader.ReadLine();
                 //profile.LastName = reader.ReadLine(); 
                 //profile.Age = int.Parse(reader.ReadLine());
