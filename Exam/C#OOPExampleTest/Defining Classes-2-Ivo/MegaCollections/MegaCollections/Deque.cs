@@ -2,7 +2,8 @@ namespace MegaCollections
 {
     using System;
     //атрибутите са чисто за девелопера
-    //[Author]
+    [Author("Ivailo Kenov")]
+    [Author("Nikolai Kostov")]
     //първо трябва да кажа на класа да бъде шаблонен с <T>
     public class Deque<T>
     {
