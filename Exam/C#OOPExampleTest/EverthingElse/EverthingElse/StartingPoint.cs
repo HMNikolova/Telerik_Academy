@@ -1,8 +1,10 @@
-﻿namespace EverthingElse
+﻿namespace EverthingElse.Extensions
 {
     //за да използвам StringExtensions.cs namespace-овете трябва да са еднакви или да се добави using към кой namespace се отнася
     using System;
+    using System.Collections.Generic;
     using System.Linq;
+    using EverthingElse.Extensions;
 
     public static class StartingPoint
     {
@@ -11,11 +13,11 @@
             //искаме да направим string  да има допълнителна функционалност
             var text = "Pesho Gosho Ivan";
             var wordCount = text.CountWords();
-            Conosle.WriteLine(wordCount);//3
+            Console.WriteLine(wordCount);//3
             
             var anotherText = "C Sharp";
             var result = anotherText.CountWords();
-            Conosle.WriteLine(result);
+            Console.WriteLine(result);
             
             //метода така написан в този клас не е нищо особено, то го разбира статичен метод в статичен клас и може да се извиква така:
             //ние не искаме така

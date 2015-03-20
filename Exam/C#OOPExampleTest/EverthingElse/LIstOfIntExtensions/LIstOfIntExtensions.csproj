@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3D5B07B8-62BA-4C25-9CB5-943454FF9D38}</ProjectGuid>
+    <ProjectGuid>{028769A8-1102-4603-BB42-7F4DD1C50092}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EverthingElse</RootNamespace>
-    <AssemblyName>EverthingElse</AssemblyName>
+    <RootNamespace>LIstOfIntExtensions</RootNamespace>
+    <AssemblyName>LIstOfIntExtensions</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -41,10 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Extensions\LIstOfIntExtensions.cs" />
-    <Compile Include="StartingPoint.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Extensions\StringExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

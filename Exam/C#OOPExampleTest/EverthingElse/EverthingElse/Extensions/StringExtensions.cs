@@ -1,4 +1,4 @@
-﻿namespace EverthingElse
+﻿namespace EverthingElse.Extensions
 {
     public static class StringExtensions
     {
