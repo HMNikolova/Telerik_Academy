@@ -8,7 +8,9 @@
         //искаш всички стрингове да може да им се извиква CountWords
         public static int CountWords(this string input)
         {
-            return 0;
+            var words = input.Split(' ');
+            
+            return words.Length;
         }
         //да покажем на c#, че ние искаме да екстендваме стрингове
         
