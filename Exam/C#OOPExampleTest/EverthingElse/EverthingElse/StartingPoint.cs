@@ -36,12 +36,33 @@
             
             //аноним тип данни - лошото е че не може да го подаваме на метод и т.н. и да го използваме вътре
             //вместо да създаваме друг клас и да го извикваме може да кажем така:
-            var student = new {FirstName = "Pesho", ID = 155};
-            Console.WriteLine(student.FirstName);
-            Console.WriteLine(student.ID);
-            var point = new {X = 5; Y = 6};
-            Console.WriteLine(point.X);
+            //var student = new {FirstName = "Pesho", ID = 155};
+            //Console.WriteLine(student.FirstName);
+            //Console.WriteLine(student.ID);
+            //var point = new {X = 5; Y = 6};
+            //Console.WriteLine(point.X);
             //анонимните типове са read only и след инициализацията на променлива вече не можем да променяме
+            
+            //ToString() при анонимните типове ни показва всичко, което има в ан.тип
+            //Console.WriteLine(student.ToString());
+            
+            //колекция от анонимните типове
+            var ints = new [] {1,2,3};
+            //text.Split(new[] {' ', ','});//компилатора ще се сети че е масив от чарове(char)
+            
+            //анонимен масив с анонимен тип
+            var students = new[]
+            {
+                new {FirstName = "Ivan", LastName = "Peshov"},
+                new {FirstName = "Petar", LastName = "Peshov"},
+                new {FirstName = "Martin", LastName = "Peshov"}
+            };
+            for (int i = 0; i < students.Length; i++)
+            {
+                Console.WriteLine(students[i].FirstName);
+            }
+            
+            //45:10
         }
     }
 }
