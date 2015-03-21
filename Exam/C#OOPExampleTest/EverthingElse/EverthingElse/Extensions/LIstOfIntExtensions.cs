@@ -1,7 +1,5 @@
 ﻿namespace EverythingElse.Extensions
 {
-	//17 минута нова папка
-	//22:14
 	using System;
 	using System.Collections.Generic;
 					
