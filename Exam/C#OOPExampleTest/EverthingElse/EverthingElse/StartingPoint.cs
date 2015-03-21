@@ -32,7 +32,16 @@
             list.Add(3);
             //IncreaseWithNumber какво ще очаква - числото, с което да го увеличим
             //защо очаква един параметър, а не два, защото първия е самия лист, който екстендваме
-            list.IncreaseWithNumber(5);//6 7 8
+            //list.IncreaseWithNumber(5);//6 7 8
+            
+            //аноним тип данни - лошото е че не може да го подаваме на метод и т.н. и да го използваме вътре
+            //вместо да създаваме друг клас и да го извикваме може да кажем така:
+            var student = new {FirstName = "Pesho", ID = 155};
+            Console.WriteLine(student.FirstName);
+            Console.WriteLine(student.ID);
+            var point = new {X = 5; Y = 6};
+            Console.WriteLine(point.X);
+            //анонимните типове са read only и след инициализацията на променлива вече не можем да променяме
         }
     }
 }
