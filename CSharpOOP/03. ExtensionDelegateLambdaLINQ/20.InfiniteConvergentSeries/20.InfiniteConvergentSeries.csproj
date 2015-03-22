@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C6914E79-2B75-47F3-BE4A-640CD0703359}</ProjectGuid>
+    <ProjectGuid>{393C2BB6-114E-4C75-AEA2-DB9F38463F86}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>StartingPointPartTwo</RootNamespace>
-    <AssemblyName>StartingPointPartTwo</AssemblyName>
+    <RootNamespace>_20.InfiniteConvergentSeries</RootNamespace>
+    <AssemblyName>20.InfiniteConvergentSeries</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -41,18 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Extensions\IEnumerableExtensions.cs" />
-    <Compile Include="StartingPointPartTwo.cs" />
+    <Compile Include="CalculateSum.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\EverthingElse\EverthingElse.csproj">
-      <Project>{3d5b07b8-62ba-4c25-9cb5-943454ff9d38}</Project>
-      <Name>EverthingElse</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

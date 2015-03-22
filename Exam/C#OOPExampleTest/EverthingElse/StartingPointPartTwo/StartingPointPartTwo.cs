@@ -1,12 +1,11 @@
-﻿namespace EverthingElse
+﻿namespace StartingPointPartTwo
 {
-    //1:03:41 - Action може да пази всякакви делегати, които не връщат стойности(т.е. които са void), типовете на generic(Т1,Т2,Т3) всъщност са параметрите, които приема дадения метод 
-
+    
     //за да използвам StringExtensions.cs namespace-овете трябва да са еднакви или да се добави using към кой namespace се отнася
     using System;
     using System.Collections.Generic;
     using System.Linq;
-
+    using StartingPointPartTwo.Extensions;
 
     public static class StartingPoint
     {
@@ -30,9 +29,121 @@
 
         }
 
+        //подаване на делегат на друг метод, т.е. може да подадем Action на метод
+        public static void PrintMethod(Action<string, int> action)
+        {
+            action("15", 5);
+        }
+
+        //public static int ReturnAnswerToEverything(string input, long number)
+        public static int ReturnAnswerToEverything()
+        {
+            return 42;
+        }
+
         public static void Main()
         {
+            var pets = new[]
+                {
+                    new {Name="Sharo", Age=8},
+                    new {Name="Rex", Age=4},
+                    new {Name="Strela", Age=1},
+                    new {Name="Bora", Age=3}
+                };
+            //OrderBy по какъв начин да ми ги сортира
+            pets.OrderBy(p => p.Age).ForEach(p => Console.WriteLine(p.Name));
 
+            //1:48:05
+            
+            //всяко нещо, което може да бъде foreach-вано с дефолтния foreach e IEnumerable
+
+            //искам за всеки един елемент да ми изпълниш някакъв метод
+            //var numbers = new int[] { 3,4,5,6};
+            //или колекция
+            var numbers = new List<int> { 3, 4, 5, 6 };
+            var removeNumber = numbers.FindAll(x => x > 4);
+
+            //всяка една колекция ние я екстенднднахме да има foreach метод и за този foreach аз мога да кажа
+            //искам foreach за всеки елемент вътре - изпълни ми cw
+            //т.е. аз му казвам какъв Action да изпълни и той казва добре аз ще го изпълня
+            numbers.ForEach(x => Console.WriteLine(x));
+
+            //този ламбда израз представлява - приема един параметър(параметъра, който е вътре в колекцията) и не връща нищо
+            //очевидно този ламбда израз е някакъв Action от типа данни, който е в numbers
+            //т.е
+            //Action<int> myAction = x =>
+            //    {
+            //        Console.WriteLine("Telerik");
+            //        Console.WriteLine(x);
+            //    };//защото аз му подавам инт и вътре принтирам Telerik и самия инт
+            //т.е. като знам, че това е Action аз мога да направя extension(разширен) метод,
+            //който да се казва ForEach, той да приема Action и да ми изпълнява каквото му кажа
+
+            //искам да мога да кажа ForEach - за всеки ми изпълни следното
+            numbers.ForEach(x =>
+                {
+                    Console.WriteLine("Telerik");
+                    Console.WriteLine(x);
+                });
+            
+
+            //какво има в linq
+            //имаме колекция от интове
+            //var list = new List<int> { 4, 3, 0, 1243 };
+            //OrderBy - Подреди по
+            //var sortedList = list.OrderBy(x => x).ToList();
+            //или
+            //var list = new List<string> { "4564645", "3ad", "0", "1243" };
+            //var sortedList = list.OrderBy(x => x.Length).ToList();//подрежда ги по дължина
+            
+            //Action може да пази всякакви делегати, които не връщат стойности(т.е. които са void), типовете на generic(Т1,Т2,Т3) всъщност са параметрите, които приема дадения метод 
+            //правя си Action от типовете, които са в SomeMethod
+            //Action върши работа като деледат, който не връща нищо
+            Action<string, int> myMethod = SomeMethod;
+            //извиква се като му подадем string, int
+            myMethod("", 0);
+
+            //може и така
+            PrintMethod(myMethod);
+
+            //вграден делегат, който е удобен за използване
+            //Action<string> cw = Console.WriteLine;
+
+            //Func - последния параметър, който сетнем е тази стойност, която се връща от метода
+            //в този func мога да пазя всякакъв метод, който връща интове и не приема никакви стойности
+            //последната стойност, която е в дженериците на func е типа данни, който връща даден метод
+            //всичките преди това са параметрите, които той приема т.е.
+            //в този func мога да пазя всякакви методи, които приемат string и long и връщат int и за да работи горе в метода ReturnAnswerToEverything трябва да кажа
+            //Func<string, long, int> func = ReturnAnswerToEverything;
+            //и за да го извикаме правим
+            //func ("15", 15415864);
+            Func<int> func = ReturnAnswerToEverything;   
+            
+            //Lambda изрази - съкратен запис на метод
+            //приема стринг връща инт
+            //Func<string, int> funcs = x => 42;
+            //или функция, която очаква стинг и връща инт, казваме искам х да ми е такова, че int.Parse парсва х
+            //Func<string, int> funcs = x => int.Parse(x);
+            //int result = func("15");
+
+            //за да може да го дебъгнем трябва да изглежда така:
+            //Func<string, string, int> funcs = x =>
+            //    {
+            //        return int.Parse(x);
+            //    };
+
+            //Lambda израза е метод, който е написан директно вътре в кода и се използва на едно място, но със съкратен запис
+            //Func<string, string, int> funcs = (x, y) =>
+            //    {
+            //        Console.WriteLine(x, y);
+            //        return 42;
+            //    };
+            //или
+            //Func<string, string, int> funcs = (x, y) => 42;
+            //ако не искаме да има параметри, които се приемат
+            Func<int> funcs = () => 42;
+            int result = func();
         }
     }
 }
+ 
