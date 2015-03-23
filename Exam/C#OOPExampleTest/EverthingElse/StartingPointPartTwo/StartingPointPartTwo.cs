@@ -43,12 +43,112 @@
 
         public static void Main()
         {
+            //екстеншън методите ни връщат нова колекция(обект)
+            //where
+            //listOfStudents.Where(st => st.Mark != 2);
+            //за да взема студентите, трябва да създам нова променлива и вече новата колекция ще се запише в новата променлива
+            var filter = listOfStudents.Where(st => st.Mark != 2);
+            //първи елемент, който е в колекцията
+            var first = listOfStudents.First();
+            //същото е ако кажем
+            var first = listOfStudents.Where(st => st.Mark > 2).First();
+            //ако няма нищо в колекцията FirstOrDefault ще върне null, а First ще гръмне
+            var first = listOfStudents.FirstOrDefault();
+            //на FirstOrDefault може да кажем първия, който отговаря на дадено условие
+            var first = listOfStudents.FirstOrDefault(st => st.Mark > 2);
+            //с select/cast може да трансформираме оригиналните обекти в нещо друго т.е. селектираме само част от тези обекти
+            var lastNames = listOfStudents.Select(st => new {Mark = st.Mark, FullName = st.FirstName + " " + st.LastName});
+            //за да кастнем първо трябва да селектираме
+            var lastNames = listOfStudents.Where(st => st.Mark > 2).Select(st => st).Cast<object>().ToList();
+            //подредба на колекции - подреди ми първо по LastName и ако някъде съвпадат по FirstName
+             var lastNames = listOfStudents.Where(st => st.Mark > 2).OrderByDescending(st => st.LastName).ThenByDescending(st => st.FirstName).ThenBy(st => st.Mark).ToList();
+            //Any и All връщат bool - искам да проверя дали някой изпълнява някои условия
+            //Any - ако поне един от студентите има оценка > 2 връща true
+            var lastNames = listOfStudents.Any(st => st.Mark > 2);
+            //All - дали всички изпълняват дадено условие
+            var lastNames = listOfStudents.All(st => st.Mark > 2);
+            //AsEnumerable - връща ни същата колекция
+            var lastNames = listOfStudents.Where(st => st.Mark > 2).AsEnumerable().ToList();
+            //Reverse - обръща дадена колекция
+            var lastNames = listOfStudents.Where(st => st.Mark > 2).Reverse().ToList();
+            //Average - средно аритметично
+            var averageMark = listOfStudents.Average(st => st.Mark);
+            //Sum
+            var sumMark = listOfStudents.Sum(st => st.Mark);
+            //Max - намира макс. ст-ст, която се намира вътре, Min е на същия принцип
+            var maxMark = listOfStudents.Max(st => st.Mark);
+            //Count - ще ги преброи
+            var countMark = listOfStudents.Count(st => st.Mark > 2);
+            
+            //2:55:00
+            
             //може да си направим лист от студенти
-            var lists = new List<Student> 
+            var listOfStudents = new List<Student> 
             {
-                new Student {FirstName = "Ivan", LastName = "Ivanov"},
-                new Student {FirstName = "Ivan", LastName = "Ivanov"},
+                new Student {FirstName = "Ivan", LastName = "Ivanov", Mark = 2},
+                new Student {FirstName = "Dragan", LastName = "Draganov", Mark = 4},
+                new Student {FirstName = "Petkan", LastName = "Petkanov", Mark = 6},
+                new Student {FirstName = "Martin", LastName = "Vilqnov", Mark = 3}
             };
+            
+            //екстеншън методи с ламбда изрази
+            var filteredStudents = 
+            //искам да ми вземеш всеки един студент такъв, че LastName да започва с буквата g
+            listOfStudents.Where(st.LastName.StartWhit("G"))
+            //след това ми ги подреди по оценка наобратно
+            .OrderByDescending(st => st.Mark)
+            //селектирай ми всеки студент, дай ми от него нов обект, който има само LastName
+            .Select(st => new {LastName = st.LastName})
+            //за да ни се върне като лист
+            .ToList();
+            foreach (var student in filteredStudents)
+            {
+                Console.WriteLine(student.LastName);
+            }
+            
+            ////nested заявки от колекции и да ги джоинваме
+            //var numbers = new[] {1,2,3,4};
+            //var cartesianProduct = 
+            //from student in listOfStudents
+            //from number in listOfStudents
+            //select new {Id = number, Name = student.LastName};
+            //foreach (var selected in cartesianProduct)
+            //{
+                //Console.WriteLine(selected.Id + " " + selected.Name);
+            //}
+            
+            ////nested заявки (декартово произведение)
+            //var cartesianProduct = 
+           ////за всеки един студент ще вземе всички останали
+            //from st1 in listOfStudents
+            //from st2 in listOfStudents
+            ////where st1.LastName != st2.LastName//за да не ми ги повтаря
+            //select new {FirstStudent = st1.LastName, SecondStudent = st2.LastName};
+            //foreach (var selected in cartesianProduct)
+            //{
+                //Console.WriteLine(selected.DirstStudent + " " + selected.SecondStudent);
+            //}
+            
+            //от всеки студент в листа със студенти, намери ми тези, на които оценката е по-голяма от 2 и ми ги подреди по LastName, и ми селектирай цялото име
+            var passedStudents = 
+            from student in listOfStudents
+            where student.Mark > 2
+            orderby student.LastName
+            select student.FirstName + " " + student.LastName;
+            //group student by student.Mark;//може и да ги групирам, но ще трябва да ползвам два foreach-a и да махна горния select
+            //foreach (var group in passedStudents)
+            //{
+                //Console.WriteLine(group.Key);
+                //foreach (var student in group)
+                    //{
+                        //Console.WriteLine(student.FirstName + " " + student.LastName);
+                   // }
+            //}
+            foreach (var student in passedStudents)
+            {
+                //принтира ми всички LastName, които нямат 2-ка 
+                Console.WriteLine(student);
+            }
             
             
             var list = new List<int> {1,2,6,3,8,10};
@@ -63,7 +163,20 @@
                 Console.WriteLine(number);
             }
             
-            //правим си нов клас 2:02:00
+            //преброяване колко пъти се среща дадена дума в текст
+            var text = "Hi, I C Sharp C Sharp C Sharp";
+            var search = "sharp";
+            var result = text
+            .Split(' ')
+            .Where(w => w.ToLower() == search.ToLower())
+            //.Count();//ще ги преброи
+            .ToList();//връща ги като лист
+            Console.WriteLine(result);
+            //стринга е масив от чарове и може да кажем
+            var results = text.Where(s => s == 'c' || s == 'C').Count();
+            Console.WriteLine(results);
+            
+            //правим си нов клас 2:02:00 има го в https://dotnetfiddle.net/
             //ако искаме да върнем повече от една стойност си правим клас и тук казваме
             Func<string, string, Student> studentGenerator = (x,y) => new {FirstName = x, LastName = y };//това ми генерира студенти
             var someStudent = studentGenerator("Pesho", "Ivanov");
