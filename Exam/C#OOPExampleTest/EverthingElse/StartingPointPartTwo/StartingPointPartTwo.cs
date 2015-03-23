@@ -6,6 +6,8 @@
     using System.Collections.Generic;
     using System.Linq;
     using StartingPointPartTwo.Extensions;
+    using EverythingElse;
+    using System.Dynamic;
 
     public static class StartingPoint
     {
@@ -43,45 +45,6 @@
 
         public static void Main()
         {
-            //екстеншън методите ни връщат нова колекция(обект)
-            //where
-            //listOfStudents.Where(st => st.Mark != 2);
-            //за да взема студентите, трябва да създам нова променлива и вече новата колекция ще се запише в новата променлива
-            var filter = listOfStudents.Where(st => st.Mark != 2);
-            //първи елемент, който е в колекцията
-            var first = listOfStudents.First();
-            //същото е ако кажем
-            var first = listOfStudents.Where(st => st.Mark > 2).First();
-            //ако няма нищо в колекцията FirstOrDefault ще върне null, а First ще гръмне
-            var first = listOfStudents.FirstOrDefault();
-            //на FirstOrDefault може да кажем първия, който отговаря на дадено условие
-            var first = listOfStudents.FirstOrDefault(st => st.Mark > 2);
-            //с select/cast може да трансформираме оригиналните обекти в нещо друго т.е. селектираме само част от тези обекти
-            var lastNames = listOfStudents.Select(st => new {Mark = st.Mark, FullName = st.FirstName + " " + st.LastName});
-            //за да кастнем първо трябва да селектираме
-            var lastNames = listOfStudents.Where(st => st.Mark > 2).Select(st => st).Cast<object>().ToList();
-            //подредба на колекции - подреди ми първо по LastName и ако някъде съвпадат по FirstName
-             var lastNames = listOfStudents.Where(st => st.Mark > 2).OrderByDescending(st => st.LastName).ThenByDescending(st => st.FirstName).ThenBy(st => st.Mark).ToList();
-            //Any и All връщат bool - искам да проверя дали някой изпълнява някои условия
-            //Any - ако поне един от студентите има оценка > 2 връща true
-            var lastNames = listOfStudents.Any(st => st.Mark > 2);
-            //All - дали всички изпълняват дадено условие
-            var lastNames = listOfStudents.All(st => st.Mark > 2);
-            //AsEnumerable - връща ни същата колекция
-            var lastNames = listOfStudents.Where(st => st.Mark > 2).AsEnumerable().ToList();
-            //Reverse - обръща дадена колекция
-            var lastNames = listOfStudents.Where(st => st.Mark > 2).Reverse().ToList();
-            //Average - средно аритметично
-            var averageMark = listOfStudents.Average(st => st.Mark);
-            //Sum
-            var sumMark = listOfStudents.Sum(st => st.Mark);
-            //Max - намира макс. ст-ст, която се намира вътре, Min е на същия принцип
-            var maxMark = listOfStudents.Max(st => st.Mark);
-            //Count - ще ги преброи
-            var countMark = listOfStudents.Count(st => st.Mark > 2);
-            
-            //2:55:00
-            
             //може да си направим лист от студенти
             var listOfStudents = new List<Student> 
             {
@@ -90,21 +53,70 @@
                 new Student {FirstName = "Petkan", LastName = "Petkanov", Mark = 6},
                 new Student {FirstName = "Martin", LastName = "Vilqnov", Mark = 3}
             };
-            
-            //екстеншън методи с ламбда изрази
-            var filteredStudents = 
-            //искам да ми вземеш всеки един студент такъв, че LastName да започва с буквата g
-            listOfStudents.Where(st.LastName.StartWhit("G"))
-            //след това ми ги подреди по оценка наобратно
-            .OrderByDescending(st => st.Mark)
-            //селектирай ми всеки студент, дай ми от него нов обект, който има само LastName
-            .Select(st => new {LastName = st.LastName})
-            //за да ни се върне като лист
-            .ToList();
-            foreach (var student in filteredStudents)
+
+            ////екстеншън методите ни връщат нова колекция(обект)
+            ////where
+            ////listOfStudents.Where(st => st.Mark != 2);
+            ////за да взема студентите, трябва да създам нова променлива и вече новата колекция ще се запише в новата променлива
+            //var filter = listOfStudents.Where(st => st.Mark != 2);
+            ////първи елемент, който е в колекцията
+            //var first = listOfStudents.First();
+            ////същото е ако кажем
+            //var first = listOfStudents.Where(st => st.Mark > 2).First();
+            ////ако няма нищо в колекцията FirstOrDefault ще върне null, а First ще гръмне
+            //var first = listOfStudents.FirstOrDefault();
+            ////на FirstOrDefault може да кажем първия, който отговаря на дадено условие
+            //var first = listOfStudents.FirstOrDefault(st => st.Mark > 2);
+            ////с select/cast може да трансформираме оригиналните обекти в нещо друго т.е. селектираме само част от тези обекти
+            //var lastNames = listOfStudents.Select(st => new {Mark = st.Mark, FullName = st.FirstName + " " + st.LastName});
+            ////за да кастнем първо трябва да селектираме
+            //var lastNames = listOfStudents.Where(st => st.Mark > 2).Select(st => st).Cast<object>().ToList();
+            ////подредба на колекции - подреди ми първо по LastName и ако някъде съвпадат по FirstName
+            // var lastNames = listOfStudents.Where(st => st.Mark > 2).OrderByDescending(st => st.LastName).ThenByDescending(st => st.FirstName).ThenBy(st => st.Mark).ToList();
+            ////Any и All връщат bool - искам да проверя дали някой изпълнява някои условия
+            ////Any - ако поне един от студентите има оценка > 2 връща true
+            //var lastNames = listOfStudents.Any(st => st.Mark > 2);
+            ////All - дали всички изпълняват дадено условие
+            //var lastNames = listOfStudents.All(st => st.Mark > 2);
+            ////AsEnumerable - връща ни същата колекция
+            //var lastNames = listOfStudents.Where(st => st.Mark > 2).AsEnumerable().ToList();
+            ////Reverse - обръща дадена колекция
+            //var lastNames = listOfStudents.Where(st => st.Mark > 2).Reverse().ToList();
+            ////Average - средно аритметично
+            //var averageMark = listOfStudents.Average(st => st.Mark);
+            ////Sum
+            //var sumMark = listOfStudents.Sum(st => st.Mark);
+            ////Max - намира макс. ст-ст, която се намира вътре, Min е на същия принцип
+            //var maxMark = listOfStudents.Max(st => st.Mark);
+            ////Count - ще ги преброи
+            //var countMark = listOfStudents.Count(st => st.Mark > 2);
+            //GroupBy
+            var groups = listOfStudents.GroupBy(st => st.Mark).ToList();
+            foreach (var group in groups)
             {
-                Console.WriteLine(student.LastName);
+                Console.WriteLine(group.Key);
+                foreach (var student in group)
+                {
+                    Console.WriteLine(student.FirstName);
+                }
             }
+            //skip and take - пропуска първите колкото му кажем и взима толкова колкото му посочим
+            var groupes = listOfStudents.Skip(2).Take(1).ToList();
+
+            ////екстеншън методи с ламбда изрази
+            //var filteredStudents = 
+            ////искам да ми вземеш всеки един студент такъв, че LastName да започва с буквата g
+            //listOfStudents.Where(st.LastName.StartWhit("G"))
+            ////след това ми ги подреди по оценка наобратно
+            //.OrderByDescending(st => st.Mark)
+            ////селектирай ми всеки студент, дай ми от него нов обект, който има само LastName
+            //.Select(st => new {LastName = st.LastName})
+            ////за да ни се върне като лист
+            //.ToList();
+            //foreach (var student in filteredStudents)
+            //{
+            //    Console.WriteLine(student.LastName);
+            //}
             
             ////nested заявки от колекции и да ги джоинваме
             //var numbers = new[] {1,2,3,4};
@@ -176,23 +188,23 @@
             var results = text.Where(s => s == 'c' || s == 'C').Count();
             Console.WriteLine(results);
             
-            //правим си нов клас 2:02:00 има го в https://dotnetfiddle.net/
-            //ако искаме да върнем повече от една стойност си правим клас и тук казваме
-            Func<string, string, Student> studentGenerator = (x,y) => new {FirstName = x, LastName = y };//това ми генерира студенти
-            var someStudent = studentGenerator("Pesho", "Ivanov");
             
-            //Predicate - Получаваме нещо и връщаме bool
-            //n => n > 3 - това нещо наричаме Predicate, защото връща true или false
-            var numbers = new List<int> {1,2,3,4};
-            var filteredNumbers = numbers.Where(n => n > 3);
-            //също може да кажем
-            var cities = new List<string> {"Sofia", "Varna", "Burgas"};
-            //намери ми всички, които като ги направиш с малки букви и започват с s са валидни
-            var filteredCities = cities.Where(c => c.ToLower().StartsWhit("s")).ToList();
+            ////ако искаме да върнем повече от една стойност си правим клас и тук казваме
+            //Func<string, string, Student> studentGenerator = (x,y) => new {FirstName = x, LastName = y };//това ми генерира студенти
+            //var someStudent = studentGenerator("Pesho", "Ivanov");
             
-            //ламбда израз
-            Action<int> action = x => Console.WriteLine(x);
-            action(5);
+            ////Predicate - Получаваме нещо и връщаме bool
+            ////n => n > 3 - това нещо наричаме Predicate, защото връща true или false
+            //var numbers = new List<int> {1,2,3,4};
+            //var filteredNumbers = numbers.Where(n => n > 3);
+            ////също може да кажем
+            //var cities = new List<string> {"Sofia", "Varna", "Burgas"};
+            ////намери ми всички, които като ги направиш с малки букви и започват с s са валидни
+            //var filteredCities = cities.Where(c => c.ToLower().StartsWith("s")).ToList();
+            
+            ////ламбда израз
+            //Action<int> action = x => Console.WriteLine(x);
+            //action(5);
             
             //var pets = new[]
                 //{
@@ -228,12 +240,12 @@
             //т.е. като знам, че това е Action аз мога да направя extension(разширен) метод,
             //който да се казва ForEach, той да приема Action и да ми изпълнява каквото му кажа
 
-            //искам да мога да кажа ForEach - за всеки ми изпълни следното
-            numbers.ForEach(x =>
-                {
-                    Console.WriteLine("Telerik");
-                    Console.WriteLine(x);
-                });
+            ////искам да мога да кажа ForEach - за всеки ми изпълни следното
+            //numbers.ForEach(x =>
+            //    {
+            //        Console.WriteLine("Telerik");
+            //        Console.WriteLine(x);
+            //    });
             
 
             //какво има в linq
@@ -290,8 +302,61 @@
             //или
             //Func<string, string, int> funcs = (x, y) => 42;
             //ако не искаме да има параметри, които се приемат
-            Func<int> funcs = () => 42;
-            int result = func();
+            //Func<int> funcs = () => 42;
+            //int result = funcs();
+
+
+            ////dynamic работи runtime - показва ни грешка чак като го пуснем в конзолаата
+            //dynamic dynStudent = new Student { FirstName = "Ivan" };
+            ////това е грешка, но се разбира при компилация
+            //Console.WriteLine(dynStudent.LastName);
+
+            //декартово произведение
+            var cities = new[] { "Varna", "Sofia", "Burgas" };
+            //за всяко c1 ми направи нова колекция, която комбинира двете
+            var cartesian =
+                from t1 in cities
+                from t2 in cities
+                select new { T1 = t1, T2 = t2 };
+            var cartesianExtension = cities.SelectMany(c1 => cities.Select(c2 => c1 + c2)).ToList();
+
+            //var cartesianExtension = cities.Select(c1 => cities.Select(c2 => c1 + c2)).ToList();
+            //foreach (var pair in cartesianExtension)
+            //{
+            //    foreach (var city in pair)
+            //    {
+            //        Console.WriteLine(city);
+            //    }
+            //}
+
+            //където имаме колекция от колекции ние можем да ги флапнем т.е. да ги направим на една с SelectMany
+            foreach (var pair in cartesianExtension)
+            {
+                Console.WriteLine(pair);
+            }
+
+            //dynamic е хубаво да не се използва
+            //ExpandoObject - позволява ни да добавяме членове на даден тип рънтайм
+            //ExpandoObject - обект на който можем да добавяме всякакви неща
+            dynamic dynStudents = new ExpandoObject();
+            //dynStudents.FirstName = new Student { FirstName = "Neshto si" };
+            dynStudents.FirstName = "Ivan";
+            dynStudents.LastName = "Ivanov";
+            Func<string> funct = () =>
+            {
+                return dynStudents.FirstName + dynStudents.LastName;
+            };
+            dynStudents.FullName = func;
+            Console.WriteLine(dynStudents.FullName());
+            ////може да го кастнем към дикшънари от стринг и обект
+            //var dict = new Dictionary<string, object>();
+            //dict["FirstName"] = 15;
+            ////извади ми ключа от този речник
+            //Console.WriteLine(dict["FirstName"]);
+
+            //var dicts = (IDictionary<string, object>)dynStudents;
+            ////и ще ни изкара Ivanov
+            //Console.WriteLine(dicts["LastName"]);
         }
     }
 }
