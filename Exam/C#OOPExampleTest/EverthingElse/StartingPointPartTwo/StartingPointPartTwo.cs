@@ -43,30 +43,41 @@
 
         public static void Main()
         {
-            var pets = new[]
-                {
-                    new {Name="Sharo", Age=8},
-                    new {Name="Rex", Age=4},
-                    new {Name="Strela", Age=1},
-                    new {Name="Bora", Age=3}
-                };
-            //OrderBy по какъв начин да ми ги сортира
-            pets.OrderBy(p => p.Age).ForEach(p => Console.WriteLine(p.Name));
-
-            //1:48:05
+            //Predicate - Получаваме нещо и връщаме bool
+            //n => n > 3 - това нещо наричаме Predicate, защото връща true или false
+            var numbers = new List<int> {1,2,3,4};
+            var filteredNumbers = numbers.Where(n => n > 3);
+            //също може да кажем
+            var cities = new List<string> {"Sofia", "Varna", "Burgas"};
+            //намери ми всички, които като ги направиш с малки букви и започват с s
+            var filteredCities = cities.Where(c => c.ToLower().StartsWhit("s")).ToList();
+            
+            //ламбда израз
+            Action<int> action = x => Console.WriteLine(x);
+            action(5);
+            
+            //var pets = new[]
+                //{
+                    //new {Name="Sharo", Age=8},
+                    //new {Name="Rex", Age=4},
+                    //new {Name="Strela", Age=1},
+                   // new {Name="Bora", Age=3}
+                //};
+            ////OrderBy по какъв начин да ми ги сортира
+            //pets.OrderBy(p => p.Age).ForEach(p => Console.WriteLine(p.Name));
             
             //всяко нещо, което може да бъде foreach-вано с дефолтния foreach e IEnumerable
 
             //искам за всеки един елемент да ми изпълниш някакъв метод
             //var numbers = new int[] { 3,4,5,6};
-            //или колекция
-            var numbers = new List<int> { 3, 4, 5, 6 };
-            var removeNumber = numbers.FindAll(x => x > 4);
+            ////или колекция
+            //var numbers = new List<int> { 3, 4, 5, 6 };
+            //var removeNumber = numbers.FindAll(x => x > 4);
 
             //всяка една колекция ние я екстенднднахме да има foreach метод и за този foreach аз мога да кажа
             //искам foreach за всеки елемент вътре - изпълни ми cw
-            //т.е. аз му казвам какъв Action да изпълни и той казва добре аз ще го изпълня
-            numbers.ForEach(x => Console.WriteLine(x));
+            ////т.е. аз му казвам какъв Action да изпълни и той казва добре аз ще го изпълня
+            //numbers.ForEach(x => Console.WriteLine(x));
 
             //този ламбда израз представлява - приема един параметър(параметъра, който е вътре в колекцията) и не връща нищо
             //очевидно този ламбда израз е някакъв Action от типа данни, който е в numbers
