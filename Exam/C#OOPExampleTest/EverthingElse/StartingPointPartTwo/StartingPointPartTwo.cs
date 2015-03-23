@@ -43,13 +43,38 @@
 
         public static void Main()
         {
+            //може да си направим лист от студенти
+            var lists = new List<Student> 
+            {
+                new Student {FirstName = "Ivan", LastName = "Ivanov"},
+                new Student {FirstName = "Ivan", LastName = "Ivanov"},
+            };
+            
+            
+            var list = new List<int> {1,2,6,3,8,10};
+            var lessThanFive = 
+            from n in list//всяко число n, което се намира вътре в листа
+            where n < 5 && n != 3//искам да ми направиш where заявка където n<5 и е различно от 3
+            //orderby n//сортирай ми ги по самото число
+            select n + 100;//селектирай ми n и ми добави 100
+            //select n + 100.ToString();//или мога да ги стрингосам
+            foreach (var number in lessThanFive)
+            {
+                Console.WriteLine(number);
+            }
+            
+            //правим си нов клас 2:02:00
+            //ако искаме да върнем повече от една стойност си правим клас и тук казваме
+            Func<string, string, Student> studentGenerator = (x,y) => new {FirstName = x, LastName = y };//това ми генерира студенти
+            var someStudent = studentGenerator("Pesho", "Ivanov");
+            
             //Predicate - Получаваме нещо и връщаме bool
             //n => n > 3 - това нещо наричаме Predicate, защото връща true или false
             var numbers = new List<int> {1,2,3,4};
             var filteredNumbers = numbers.Where(n => n > 3);
             //също може да кажем
             var cities = new List<string> {"Sofia", "Varna", "Burgas"};
-            //намери ми всички, които като ги направиш с малки букви и започват с s
+            //намери ми всички, които като ги направиш с малки букви и започват с s са валидни
             var filteredCities = cities.Where(c => c.ToLower().StartsWhit("s")).ToList();
             
             //ламбда израз
