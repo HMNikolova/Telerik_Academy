@@ -1,7 +1,8 @@
-﻿using AnimalKindom.Interfaces;
-namespace AnimalKindom.Models
+﻿namespace AnimalKindom.Models
 {
-    public class Cat : Mammal, IAnimal, IPet
+    using AnimalKindom.Interfaces;
+
+    public class Dolphin : Mammal, IPet
     {
 
         public string Owner
@@ -15,6 +16,16 @@ namespace AnimalKindom.Models
         }
 
         public string ProvokeHappiness()
+        {
+            throw new System.NotImplementedException();
+        }
+        //движи си опашката
+        public override void Move()
+        {
+            this.FlapTail();
+        }
+
+        private void FlapTail()
         {
             throw new System.NotImplementedException();
         }

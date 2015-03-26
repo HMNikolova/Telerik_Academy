@@ -11,7 +11,7 @@
         }
         public string Name { get; protected set; }
 
-        public void Move()
+        public virtual void Move()
         { 
         
         }
