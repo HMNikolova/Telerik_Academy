@@ -9,10 +9,7 @@
         }
         public string Name { get; protected set; }
 
-        public void Move()
-        {
-            base.Die();
-            
-        }
+        public abstract void Move();
+        //2:14:00
     }
 }
