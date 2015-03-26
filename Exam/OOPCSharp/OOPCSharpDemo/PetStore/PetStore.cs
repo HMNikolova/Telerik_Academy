@@ -11,8 +11,9 @@ namespace PetStore
         static void Main()
         {
             //правим си обекта и си добавяме using AnimalKindom.Models;
-            Mammal mammal = new Hamster();
-           //1:50:00
+            PetHamster hammy = new PetHamster();
+            Console.WriteLine(hammy.ProvokeHappiness());
+            List<int> list = new List<int>();
         }
     }
 }
