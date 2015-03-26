@@ -4,15 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{740D7DFF-D564-4474-8F6A-9C678FC3811D}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{354D3009-DD11-4588-AE91-C8D56321A193}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AnimalKindom</RootNamespace>
-    <AssemblyName>AnimalKindom</AssemblyName>
+    <RootNamespace>_02.StudentsAndWorkers</RootNamespace>
+    <AssemblyName>02.StudentsAndWorkers</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -39,24 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interfaces\IAnimal.cs" />
-    <Compile Include="Interfaces\IEdable.cs" />
-    <Compile Include="Interfaces\IPet.cs" />
-    <Compile Include="Models\Animal.cs" />
-    <Compile Include="Models\Bird.cs" />
-    <Compile Include="Models\Cat.cs" />
-    <Compile Include="Models\Fish.cs" />
-    <Compile Include="Models\Food.cs" />
-    <Compile Include="Models\Hamster.cs" />
-    <Compile Include="Models\Heart.cs" />
-    <Compile Include="Models\Mammal.cs" />
-    <Compile Include="Models\Monster.cs" />
-    <Compile Include="Models\Parrot.cs" />
-    <Compile Include="Models\PetHamster.cs" />
-    <Compile Include="Models\WildHamster.cs" />
+    <Compile Include="Human.cs" />
+    <Compile Include="MainProgram.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Student.cs" />
+    <Compile Include="Worker.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="StudentsAndWorkersClassDiagram.cd" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

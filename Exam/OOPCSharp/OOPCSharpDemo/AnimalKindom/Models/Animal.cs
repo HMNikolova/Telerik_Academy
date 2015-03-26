@@ -3,7 +3,7 @@
     using AnimalKindom.Interfaces;
 
     //задаваме си въпроса: Животното вид сърце ли е? - ако да правим наследяване
-    public class Animal 
+    public class Animal : IAnimal
     {
         //правим си конструктор и му казваме: когато и да направиш животно, му сетваш, че е живо
         public Animal()
@@ -24,8 +24,8 @@
         public int Age { get; private set; }
 
         public void Eat(IEdable food)
-        { 
-        
+        {
+
         }
 
         public void Die()

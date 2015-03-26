@@ -19,7 +19,7 @@
         public override string ProvokeHappiness()
         {
             //извиква от базовия клас ProvokeHappiness
-           return base.ProvokeHappiness() + "his name is" + this.Owner;
+            return base.ProvokeHappiness() + "his name is" + this.Owner;
         }
         //{
             //System.Console.WriteLine("{0} is happy", this.Owner);

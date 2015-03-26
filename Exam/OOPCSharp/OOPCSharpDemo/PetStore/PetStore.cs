@@ -1,8 +1,8 @@
 ﻿//чекваме си референция AnimalKindom
 namespace PetStore
 {
+    using AnimalKindom.Interfaces;
     using AnimalKindom.Models;
-
     using System;
     using System.Collections.Generic; 
 
@@ -13,7 +13,10 @@ namespace PetStore
             //правим си обекта и си добавяме using AnimalKindom.Models;
             PetHamster hammy = new PetHamster();
             Console.WriteLine(hammy.ProvokeHappiness());
-            List<int> list = new List<int>();
+            
+            //List<IAnimal> list = new List<IAnimal>();
+            //list.Add(new Hamster());
+            //list.Add(new Monster());
         }
     }
 }
