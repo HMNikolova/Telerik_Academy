@@ -6,5 +6,10 @@
         {
             base.Name = "Gosho";
         }
+        
+        public virtual string ProvokeHappiness()
+        {
+            return "Your human is happy";
+        }
     }
 }
