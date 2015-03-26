@@ -1,7 +1,8 @@
 ﻿using System;
+﻿using SchoolSystem.Interfaces;
 namespace SchoolSystem
 {
-    public class Student : Person, IComparable<Student>
+    public class Student : Person, IComparable<Student>, IPerson
     {
          public Student(string name, string email, int studentId) : base(name, email)
         {
