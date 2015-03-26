@@ -5,6 +5,6 @@
        string Owner { get; }
        decimal Price { get; }
 
-       void ProvokeHappiness();
+       string ProvokeHappiness();
     }
 }
