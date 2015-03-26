@@ -4,20 +4,25 @@
 
     public class PetHamster : Hamster, IPet
     {
-
-        public string Owner
+        public PetHamster()
         {
-            get { throw new System.NotImplementedException(); }
+            this.Owner = "Pesho";
         }
+
+        public string Owner { get; private set; }
 
         public decimal Price
         {
             get { throw new System.NotImplementedException(); }
         }
 
-        public void ProvokeHappiness()
+        public override string ProvokeHappiness()
         {
-            throw new System.NotImplementedException();
+            //извиква от базовия клас ProvokeHappiness
+           return base.ProvokeHappiness() + "his name is" + this.Owner;
         }
+        //{
+            //System.Console.WriteLine("{0} is happy", this.Owner);
+        //}
     }
 }
