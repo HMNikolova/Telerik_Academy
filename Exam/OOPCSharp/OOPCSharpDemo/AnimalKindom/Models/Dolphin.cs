@@ -17,7 +17,7 @@
 
         public string ProvokeHappiness()
         {
-            throw new System.NotImplementedException();
+            return "Bau";
         }
         //движи си опашката
         public override void Move()
