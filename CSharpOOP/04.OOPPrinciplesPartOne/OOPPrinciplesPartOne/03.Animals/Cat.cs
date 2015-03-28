@@ -1,12 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace _03.Animals
+﻿namespace _03.Animals
 {
-    class Cat
+    using System;
+
+    public class Cat : Animal
     {
+        public Cat(string name, int age, bool isMale) : base(name, age, isMale)
+        {
+            
+        }
+
+        public string BeJovial()
+        {
+            return string.Format("{0} is being jovial.", this.Name);
+        }
+
+        public override void MakeSound()
+        {
+            Console.WriteLine("Miau Miau"); 
+        }
+
     }
 }

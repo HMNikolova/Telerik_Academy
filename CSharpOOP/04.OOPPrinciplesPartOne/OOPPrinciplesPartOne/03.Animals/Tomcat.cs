@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace _03.Animals
+﻿namespace _03.Animals
 {
-    class Tomcat
+    public class Tomcat : Cat
     {
+        public Tomcat(string name, int age, bool isMale) : base(name, age, isMale)
+        {
+
+        }
     }
 }

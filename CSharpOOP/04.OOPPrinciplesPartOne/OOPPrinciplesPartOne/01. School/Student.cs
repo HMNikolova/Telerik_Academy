@@ -1,12 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace _01.School
+﻿namespace _01.School
 {
-    class Student
+    using System;
+
+    public class Student : Person, IComment
     {
+        private int classNumber;
+
+        public Student(string firstName, string lastName, int classNumber)
+            : base(firstName, lastName)
+        {
+            this.ClassNumber = classNumber;
+        }
+
+        public int ClassNumber
+        {
+            get { return this.classNumber; }
+            private set
+            {
+                if (value < 1)
+                {
+                    throw new ArgumentException("Number cannot be less than or equal to 0");
+                }
+
+                this.classNumber = value;
+            }
+        }
     }
 }

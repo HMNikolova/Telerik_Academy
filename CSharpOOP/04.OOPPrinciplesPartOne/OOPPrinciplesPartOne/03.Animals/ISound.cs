@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace _03.Animals
+﻿namespace _03.Animals
 {
-    interface ISound
+    using System;
+
+    public interface ISound
     {
+        void MakeSound();
     }
 }

@@ -1,12 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace _03.Animals
+﻿namespace _03.Animals
 {
-    class Frog
+    using System;
+
+    public class Frog : Animal
     {
+        public Frog(string name, int age, bool isMale) : base(name, age, isMale)
+        {
+
+        }
+
+        public string Jump()
+        {
+            return string.Format("{0} is jumping around.", this.Name);
+        }
+
+        public override void MakeSound()
+        {
+            Console.WriteLine("Kva Kva");
+        }
     }
 }
