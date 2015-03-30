@@ -38,7 +38,7 @@ namespace OopExamples
 
         //виртуалния метод е нещо, на което позволявам да се Override-не, 
         //а абстрактния е нещо, което задължавам наследника му да го override-не
-//37:04
+
         public abstract void Draw();
     }
 
