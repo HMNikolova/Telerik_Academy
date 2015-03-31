@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace _02.BankAccounts
+﻿namespace _02.BankAccounts
 {
-    class IndividualCustomer
+    using System;
+
+    public class IndividualCustomer : Customer
     {
+        public IndividualCustomer(string name)
+            : base(name)
+        {
+
+        }
     }
 }

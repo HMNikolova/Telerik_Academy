@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace _02.BankAccounts
+﻿namespace _02.BankAccounts
 {
-    class IWithdrawable
+    public interface IWithdrawable
     {
+        void WithdrawAmount(decimal ammount);
     }
 }
