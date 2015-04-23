@@ -6,8 +6,8 @@
     <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
-    <form action="file.php" method="POST">
-        <table border="1" width="450px">
+    <form action="file.php" method="post">
+        <table border="1" width="400px">
             <tfoot>
                 <tr>
                     <td colspan="2" align="center">
@@ -16,14 +16,13 @@
                     </td>
                 </tr>
             </tfoot>
-
             <tbody>
                 <tr>
                     <th width="150px">
                         <label for="last-name">Last Name</label>
                     </th>
                     <td>
-                        <input type="text" name="last-name" id="last-name"/>
+                        <input type="text" name="last-name" id="last-name" size="29" />
                     </td>
                 </tr>
                 <tr>
@@ -31,7 +30,7 @@
                         <label for="first-name">First Name</label>
                     </th>
                     <td>
-                        <input type="text" name="first-name" id="first-name"/>
+                        <input type="text" name="first-name" id="first-name" size="29" />
                     </td>
                 </tr>
                 <tr>
@@ -39,7 +38,7 @@
                         <label for="address">Address</label>
                     </th>
                     <td>
-                        <textarea name="address" id="address" rows="5"></textarea>
+                        <textarea type="text" name="address" id="address" rows="5" cols="26"></textarea>
                     </td>
                 </tr>
                 <tr>
@@ -47,9 +46,9 @@
                         <label for="city">City</label>
                     </th>
                     <td>
-                        <input type="text" name="city" id="city" size="10"/>
+                        <input type="text" name="city" id="city" size="19" />
                         <label for="state">State</label>
-                        <input type="text" name="state" id="state" size="5"/>
+                        <input type="text" name="state" id="state" size="1" />
                     </td>
                 </tr>
                 <tr>
@@ -57,7 +56,7 @@
                         <label for="zip">Zip/Postal Code</label>
                     </th>
                     <td>
-                        <input type="text" name="zip" id="zip" size="7"/>
+                        <input type="text" name="zip" id="zip" size="5" />
                     </td>
                 </tr>
                 <tr>
@@ -66,20 +65,23 @@
                     </th>
                     <td>
                         <select name="country" id="country">
-                            <option value="Bulgaria">Bulgaria</option>
+                            <option value="Bulgaria" selected="selected">Bulgaria</option>
+                            <option value="France">France</option>
+                            <option value="Romania">Romania</option>
+                            <option value="Germany">Germany</option>
                         </select>
                     </td>
                 </tr>
                 <tr>
                     <th>
-                        <label>Phone(country code, area code, number)</label>
+                        <label for="phone">Phone(country code, area code, number)</label>
                     </th>
                     <td>
                         (+
-                        <input type="text" name="country-code" id="country-code" size="5" pattern="\d*"/>
+                        <input type="text" name="country- code" id="phone" size="2" />
                         )
-                        <input type="text" name="area-code" id="area-code" size="5" pattern="\d*"/>
-                        <input type="text" name="number" id="number" size="8" pattern="\d*"/>
+                        <input type="text" name="area-code" size="2" />
+                        <input type="text" name="number" size="9" pattern="\d*" />
                     </td>
                 </tr>
                 <tr>
@@ -87,15 +89,15 @@
                         <label for="email">E-mail</label>
                     </th>
                     <td>
-                        <input type="email" name="email" id="email"/>
+                        <input type="text" name="email" id="email" size="30" />
                     </td>
                 </tr>
                 <tr>
                     <th>
-                        <label for="birth">Birth date</label>
+                        <label for="Birth date">Birth date</label>
                     </th>
                     <td>
-                        <input type="date" name="birth" id="birth"/>
+                        <input type="date" name="Birth date" id="Birth date" />
                     </td>
                 </tr>
                 <tr>
@@ -115,22 +117,21 @@
                     </th>
                     <td>
                         <label>
-                            <input type="radio" name="starting-date" value="spring"/>
+                            <input type="radio" name="starting-date" value="spring" />
                             Spring 2015
                         </label>
-
                         <label>
-                            <input type="radio" name="starting-date" value="summer"/>
+                            <input type="radio" name="starting-date" value="summer" />
                             Summer 2015
                         </label>
                     </td>
                 </tr>
                 <tr>
                     <th>
-                        <label for="comments">Comments/Questions</label>
+                        <label for="comment">Comment/Questions</label>
                     </th>
                     <td>
-                        <textarea name="comments" id="comments" rows="5"></textarea>
+                        <textarea name="comment" id="comment" cols="28" rows="5"></textarea>
                     </td>
                 </tr>
             </tbody>
