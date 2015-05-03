@@ -1,0 +1,39 @@
+table {
+font-family: verdana, sans-serif;
+text-align: left;
+}
+
+.basic {
+		background-color: #68DF2C!important; 
+		color:white;
+        border: 1px solid #494949;
+}
+
+.germany {
+        background:url('germany.gif');  
+		background-repeat: no-repeat; 
+		background-position: 5px; 
+		padding-left: 30px;
+        
+}
+
+.mexico {
+        background:url('mexico.gif');  
+		background-repeat: no-repeat; 
+		background-position: 5px; 
+		padding-left: 30px;
+        
+}
+
+.uk {
+        background:url('united-kingdom.gif');  
+		background-repeat: no-repeat; 
+		background-position: 5px; 
+		padding-left: 30px;
+        
+}
+
+tr:nth-child(even) {background: #CCC}
+tr:nth-child(odd) {background: #FFF}
+
+

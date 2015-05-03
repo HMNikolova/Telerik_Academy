@@ -1,0 +1,37 @@
+	
+	table {
+	background-color:#6D6D6D; 
+	text-align:left; 
+	font-family:sans-serif, Arial; 
+	width: 300px;
+	}
+	
+	.gray {
+	color:#DEDDDD;
+	}
+	
+	thead tr th.gray {
+	text-align:left;
+	}
+	
+	.white {
+	color:white; 
+	font-style:italic;
+	}
+	
+	.yellow {
+	color:#DADC8C;
+	}
+	
+	.orange {
+	color:#E9850A;
+	}
+	
+	td {
+	vertical-align:top;
+	}
+	
+	#connection {
+	color:#EC0000; 
+	font-weight:bold;
+	}
