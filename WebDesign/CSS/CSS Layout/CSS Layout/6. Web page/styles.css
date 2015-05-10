@@ -1,0 +1,96 @@
+body,ul,li,div,a,span,dl,dt,dd{
+    margin: 0;
+    padding: 0;
+    border-width: 0;
+}
+
+body{
+    background-color: #2a2a2a;
+    font: bold 11px/16px Tahoma,sans-serif;
+    color: #8b999e;
+}
+
+.wrap{
+    top: 30px;
+    width: 800px;
+    margin: 0 auto;
+    border: 1px solid #337d8f;
+    border-radius: 5px;
+    position: relative;
+    background-color: #1E3741;
+    overflow: hidden;
+}
+
+ul{
+    list-style-type: none;
+    margin: 0 0 15px 0;
+}
+
+li{
+    display: inline-block;
+    background-color: #4B5F67;
+    margin-left: -1px;
+}
+
+ul li:first-child{
+    border-top-left-radius: 5px;
+}
+
+ul li:first-child :hover{
+    border-top-left-radius: 5px;
+}
+
+.sport{
+    text-decoration: underline;
+}
+
+a{
+    color: #93ABB5;
+    display: block;
+    padding: 8px 12px;
+    text-decoration: none;
+}
+
+a:hover{
+    background-color: #1E3741;
+    color: #fff;
+}
+
+a:active{
+    background-color: #00968C;
+    color: #fff;
+}
+
+.text{
+    float: left;
+}
+
+
+dt{
+    background-color: #00968C;
+    width: 213px;
+    color: #fff;
+    padding: 9px 15px 9px 10px;
+}
+
+dd{
+    width: 238px;
+    border-top: 1px solid #4B5F67;
+}
+
+dt+dd{
+    border-width: 0;
+}
+
+dd a{
+    padding: 10px 15px 10px 10px;
+}
+
+dd a:hover{
+    background-color: #4B5F67;
+}
+
+.screen{
+    width: 358px;
+    float: left;
+}

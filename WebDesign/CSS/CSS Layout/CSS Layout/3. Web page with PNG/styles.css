@@ -1,0 +1,69 @@
+body{
+	background-image:url("Picture2.png");
+}
+
+.menu {
+	border-bottom:none; 
+	padding-left:5px; 
+	margin: 10px;
+	color: white;
+	font-weight: bold;
+	font-size: 18px;
+    line-height: 16px;
+	font-family: Georgia, serif;
+}
+
+span, img, input {
+	margin-right: 50px;
+}
+
+div {
+	font-family: Tahoma, sans-serif;
+	margin:0px; 
+	font-weight:normal; 
+	font-size:16px; 
+	color:#97978F;
+}
+
+#gradient {
+	width:1340px;
+	height: 3px;
+}
+
+input[type="button"] {
+	width: 50px;
+	border: 1px solid white; border-radius:5px; 
+	color:white;
+	background-image: linear-gradient(bottom, rgb(232,49,49) 21%, rgb(255,115,96) 61%, rgb(250,168,150) 89%);
+	background-image: -o-linear-gradient(bottom, rgb(232,49,49) 21%, rgb(255,115,96) 61%, rgb(250,168,150) 89%);
+	background-image: -moz-linear-gradient(bottom, rgb(232,49,49) 21%, rgb(255,115,96) 61%, rgb(250,168,150) 89%);
+	background-image: -webkit-linear-gradient(bottom, rgb(232,49,49) 21%, rgb(255,115,96) 61%, rgb(250,168,150) 89%);
+	background-image: -ms-linear-gradient(bottom, rgb(232,49,49) 21%, rgb(255,115,96) 61%, rgb(250,168,150) 89%);
+
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.21, rgb(232,49,49)),
+		color-stop(0.61, rgb(255,115,96)),
+		color-stop(0.89, rgb(250,168,150))
+	);
+}
+
+input[type="text"] {
+	width: 350px;
+}
+
+h1 {
+	color:#E8D939; 
+	font-size:24px; 
+	margin:10px;
+}
+
+#white {
+	display: inline;
+	color:white;
+	margin:0px; 
+	font-weight:normal; 
+	font-size:16px;
+}

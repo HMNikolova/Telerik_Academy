@@ -1,0 +1,44 @@
+$width:210px;
+$height:170px;
+$width1:700px;
+$height1:500px;
+@mixin animation($speed){
+
+   -webkit-transition: all 0.5s ease-in-out;
+-moz-transition: all 0.5s ease-in-out;
+-o-transition: all 0.5s ease-in-out;
+transition: all 0.5s ease-in-out;}
+
+body {
+
+	nav {
+		display:block;
+
+		div.container {
+			margin:10px;
+
+			img {
+				width: $width;
+				height: $height;			
+			}
+		}
+	}
+	section {
+			input[type="radio"]{
+				display:none;
+				&:checked + .big-img {
+				opacity:2;
+				@include animation(0.5s);
+			}
+		}
+			.big-img {				
+			width: $width1;
+			height: $height1;
+			opacity:0;
+			display:inline-block;
+			position:absolute;
+			left:10px;
+			margin:20px 0 0 10px;
+		}
+	}
+}

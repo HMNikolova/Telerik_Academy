@@ -1,0 +1,46 @@
+.main {
+	border:1px solid black;
+	 border-radius:5px; 
+	 float:left; 
+	 height:431px; 
+	 width:535px;
+	}
+hr {
+	width:95%;
+}
+img { 
+	float:left; 
+	width:72px; 
+	height:54px;
+}
+fieldset { 
+	width:41%; 
+	margin-right:0px;
+}
+.laptops {
+	border:1px solid black; 
+	float:left; 
+	height:356px; 
+	margin:5px;
+}
+.right {
+	position:relative; 
+	left:182px; 
+	top:-323px;
+}
+.sliders {
+	position:relative; 
+	top:55px; 
+	left:10px;
+}
+a {
+	color:#66CCCC; 
+	font-family:arial; 
+	font-weight:bold;
+}
+li {
+	display: inline-block;
+}
+ul { 
+	margin-left:55px;
+}
