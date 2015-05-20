@@ -1,0 +1,225 @@
+﻿.clearfix,
+body header div#logo-container,
+body header div#logo-container h1 a img,
+body header nav, body header nav ul, body header nav ul#main-nav-list, body header nav ul#main-nav-list li, body section, body section nav ul#main-sub-nav-list li .region, body section nav ul#main-sub-nav-list li .region .sub-nav-list li, body aside {
+    zoom: 1;
+}
+.clearfix:after, body header div#logo-container:after, body header nav:after, body header nav ul:after, body header nav ul li ul.sub-nav-list:after, body section:after, body aside:after, .clearfix:before, body header div#logo-container:before, body header nav:before, body header nav ul:before, body header nav ul li ul.sub-nav-list:before, body section:before, body aside:before {
+    content: "\0020";
+    display: block;
+    height: 0;
+    overflow: hidden;
+}
+.clearfix:after, body header div#logo-container:after, body header nav:after, body header nav ul:after, body header nav ul li ul.sub-nav-list:after, body section:after, body aside:after {
+    clear: both;
+}
+body, header, section, footer, article, h1, h2, h3, h4, h5, h6, img, input, button, label, p, fieldset, nav, ul, li, a, span, strong, em {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+div, h1, h3, h4, h5, h6, header, footer, body, section, nav, article, aside {
+    display: block;
+}
+body {
+    font: 14px normal Arial;
+    color: white;
+    background-color: #679324;
+header {
+        div#logo-container {
+            float: left;
+            position: relative;
+            width: 100px;
+            height: 100px;
+            margin-right: 10px;
+            h1 {
+
+                a {
+                    img {
+                        width: 150px;
+                        height: 100px;
+                        border-radius: 20px;
+                        margin-left: 10px;
+                        margin-top: 10px;
+                    }
+                }
+            }
+        }
+        nav {
+            ul#main-nav-list {
+                list-style-type: none;
+                margin-left: 250px;
+                margin-top: 20px;
+                padding-left: 30px;
+                font-weight: bold;
+
+                li {
+                    background-color: #B6FF00;
+                    margin-right: 20px;
+                    display: inline-block;
+                    text-align: center;
+                    padding: 10px 10px;
+                    border-radius: 10px;
+                    a {
+                        color: black;
+                        text-decoration: none;
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+    }
+    section {
+
+        header{
+
+                h1{
+                text-align: center;
+                margin-top: 100px;
+                margin-bottom: 50px;
+                font-size: 35px;
+            }
+        }
+         nav {
+            ul#main-sub-nav-list {
+                list-style-type: none;
+                margin-left: 60px;
+                margin-top: 20px;
+                li {
+                    background-color: #B6FF00;
+                    margin-right: 40px;
+                    display: inline-block;
+                    width: 170px;
+                    text-align: center;
+                    padding: 10px 10px;
+                    border-radius: 10px;
+                    position: relative;
+                    a {
+                        color: black;
+                        text-decoration: none;
+                        font-size: 19px;
+                    }
+                    &:hover {
+                        .region {
+                            display: block;
+
+                            .sub-region {
+                                display: none;
+                                position: absolute;
+                                left: 190px;
+                                top: 10px;
+                                bottom: 20px;
+                                margin: 2px;
+
+                                li{
+                                    margin-bottom: 3px;
+                                }
+                            }
+
+                            &:hover {
+                                .sub-region {
+                                    display: block;
+                                }
+                            }
+                        }
+                    }
+                    .region {
+                        display: none;
+                        position: absolute;
+                        left: 0;
+                        top: 43px;
+                        .sub-nav-list {
+                            list-style-type: none;
+                            li {
+                                background-color: #008000;
+                                a {
+                                    color: white;
+                                    text-decoration: none;
+
+                                    &:hover{
+                                           + img{
+                                            display: block;
+                                        }
+                                    }
+
+                                }
+
+                                img{
+                                    display: none;
+                                    width: 180px;
+                                    border-radius: 10px;
+                                    margin-left: -6px;
+                                }
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    footer{
+        p{
+            text-align:center;
+            font-size: 35px;
+            margin-top: 250px;
+        }
+    }
+}
+/*
+body section nav ul#main-sub-nav-list ul.sub-nav-list li.content {
+  display: none;
+}
+
+.region{
+
+                            .sub-nav-list{
+
+                                .content{
+
+                                    .sub-region{
+
+                                        .sub-sub-nav-list{
+
+                                            li{
+                                                a{
+                                                    text-decoration: none;
+                                                }
+                                            }
+                                        } 
+                                    }
+
+                                }
+                            }
+                        }
+
+    */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
