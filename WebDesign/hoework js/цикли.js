@@ -226,9 +226,68 @@ while (i <= n) {
 
 
 //масиви
-var arr = new Array(6);//прави ми масив с 6 елемента
-var arr22 = new Array('6');//прави ми масив с 1 елемент със стойност стринга 6
 var arr0 = new Array(1,2,3,4);
 var arr1 = [];
 var arr2 = [[1,2,3], [4,5,6], 7];
+var arr = new Array(6);//прави ми масив с 6 елемента
+var arr22 = new Array('6');//прави ми масив с 1 елемент със стойност стринга 6
+//правилния начин да запълним масив с 15 празни елемента
+var count = 15;//дори и да сложим var count = '15';, пак резултата ще е същия
+var arr = [];
+arr[count-1] = undefined;
+console.log(arr);
+//ако искаме да принтираме определен индекс
+var arr8 = [1,2,3];
+console.log(arr8[1]);//и ни принтира 2(2) елемент
+//може да променим стойност
+arr8[1] = 'Two';
+console.log(arr8[1]);
+
+//обръщане на масив
+var reversed,
+i,
+len,
+numbers = [1,2,3,4,5,6];
+reversed = [];
+for(i = 0, len = numbers.length; i < len; i += 1){
+        //reversed.push(numbers[len-i-1]);
+        //по препоръчителния начин
+        numbers[i] = numbers[len-i-1];
+}
+console.log(numbers);
+console.log(reversed);
+
+//масив и показване на квадратите с друг масив
+var squares = [],
+numbers = [1,2,3,4,5,6,7,8,9];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
