@@ -257,9 +257,55 @@ for(i = 0, len = numbers.length; i < len; i += 1){
 console.log(numbers);
 console.log(reversed);
 
-//масив и показване на квадратите с друг масив
-var squares = [],
-numbers = [1,2,3,4,5,6,7,8,9];
+// /*globals console -  за да спре да ни показва грешки*/
+// //масив и показване на квадратите с друг масив
+// var squares = [],
+// i,
+// len,
+// numbers = [1,2,3,4,5,6,7,8,9];
+// for(i = 0, len = numbers.length; i < len; i += 1){
+//       squares[i] = numbers[i] * numbers[i]; 
+// }
+// console.log(numbers);
+// console.log(squares);
+
+// //масив на всеки елемент да показва, на кой индекс е
+// var i,
+// len,
+// count = 15,
+// numbers = [];
+// for (i = 0; i < count; i += 1){
+//     numbers[i] = i;
+//     //numbers[i] = i%2;
+//     //numbers[i] = !!(i%2);
+// };
+// console.log(numbers);
+
+// //for in цикъл
+// var names = ['Gosho', 'Peter', 'John'],
+// i;
+// for(i in names) {
+//     //изкарва ни индексите
+//     console.log(i);
+//     console.log(names[i]);
+// }
+
+// //с for in цикъла може да ходим по пропъртитата на обектите
+// var obj = {
+//     prop1: 2,
+//     prop2: 6
+// }, i;
+// for (i in obj){
+//     console.log(i, obj[i]);
+// }
+
+// //for of ни дава достъп до самите обекти
+// var names = ['Gosho', 'Peter', 'John'],
+// person;
+// for(person of names){
+//     console.log(person);
+// }
+//34:00
 
 
 
