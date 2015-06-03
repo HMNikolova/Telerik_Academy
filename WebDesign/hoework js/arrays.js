@@ -118,11 +118,67 @@
 // //търси го от 3-ти индекс нататък
 // console.log(numbers.indexOf(5, 3));
 //може да намерим всички срещания с един while 
-var numbers = [1,2,5,4,5,6,7,8,9], 
-index;
-index = numbers.indexOf(5);
-while(index >= 0) {
-	console.log(index);
-	index = numbers.indexOf(5,index + 1);
+// var numbers = [1,2,5,4,5,6,7,8,9], 
+// index;
+// index = numbers.indexOf(5);
+// while(index >= 0) {
+// 	console.log(index);
+// 	index = numbers.indexOf(5,index + 1);
+// }
+
+// //lastIndexOf - търси от дясно на ляво, някои от методите не се поддържат от всички браузери
+// //shiv, shim, polyfill - ако видя някои от думите, означава, че някаква функционалност, която не се поддържа от някакви браузери, за тази функционалност се пише код, с който да се поддържат тези браузери
+// var numbers = [1,2,5,4,5,6,7,8,9], 
+// index;
+// //искам да провериш дали в масива, в неговия прототип има indexOf и ако го няма, направими функцията
+// if(Array.prototype.indexOf){
+// 	Array.prototype.indexOf = function(value, rightOf){
+// 		var i,
+// 		len;
+// 		//ако rightOf не е подадено искам да започнеш от 0 елемент. Започни от rightOf(този параметър), ако е подаден, ако не е подаден това ще е undefined, ако rightOf е undefined(undefined е false like) съответно ще отиде към 0 и ще получи стойност 0
+// 		//подобно нещо трябва да имаме и за lastIndexOf, но в обратен ред
+// 		for(i = rightOf || 0, len = this.length; i < len; i += 1){
+// 			if(this[i] === value){
+// 				return i;
+// 			}
+// 		}
+// 		return -1;
+// 	}
+// }
+
+// //ако изпълним оператора typeOf върху масив ни дава като резултат object
+// console.log(typeof([]));
+
+// //типовете в javascript са 6 - undefined, null, boolean, number, string и object
+// //ако искаме да проверим типа на една променлива, която е масив
+// var arr = [];
+// console.log(Array.isArray(arr));
+// console.log(Array.isArray([]));
+// console.log([] instanceof Array);
+// //долните два реда показват, че работи правилно за масив
+// console.log(Array.isArray({}));
+// console.log(Array.isArray(5));
+
+//разликата кога получаваме undefined
+// var numbers = [1,2];
+// //тук резултата е undefined
+// console.log(numbers[5]);
+// numbers[5] = undefined;
+// //а тук резултата е масив
+// console.log(numbers);
+
+//матрица
+var matrix = [],
+rows = 5, 
+cols = 3,
+count = 1,
+row,
+col;
+for(row = 0; row < rows; row += 1){
+	matrix.push([]);
+	for(col = 0; col < cols; col += 1){
+		matrix[row][col] = count;
+		count += 1;
+	}
 }
-//1:11:38
+console.dir(matrix);
