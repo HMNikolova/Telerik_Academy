@@ -182,3 +182,40 @@ for(row = 0; row < rows; row += 1){
 	}
 }
 console.dir(matrix);
+
+
+
+
+
+//има 3 начина да си направим функция 
+// //1.конструктор
+// var f = new Function('console.log("Hello")'); 
+// f();
+// //има 2 функции, с които може да се хаква
+// var body = 'hackYou()';
+// var f = new Function(body);
+// f();
+// //eval е втората(прави същото като функция) - тя ни позволява да подадем като стринг, javascript код, който искаме да се изпълни
+// var body = 'hackYou()';
+// var f = new Function(body);
+// eval('console.log("Hacked!")');
+
+//2.declaration - казваме името и кръглите скоби и body-то
+fDeclaration();
+function fDeclaration(){
+	console.log('declaration');
+}
+//3.expression - правим си функцията, само че я присвояваме на променлива
+var fExpression = function(){
+	console.log('expression');
+}
+
+// function print(){
+// 	var i,
+// 	count = 5;
+// 	for(i = 0; i < count; i += 1){
+// 	console.log('Hello!!!' + i);
+// 	}
+// }
+// print();
+//12:00
