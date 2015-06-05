@@ -319,4 +319,8 @@
 // 	console.log(arguments.length);
 // }
 // f(1,2,3);
+<<<<<<< HEAD
 //36:26
+=======
+//36:26
+>>>>>>> 2f00841f59bea7c2fff5a9543286acc6b59c1432
