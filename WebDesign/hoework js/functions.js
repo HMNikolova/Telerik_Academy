@@ -130,4 +130,75 @@
 // 	console.log(arguments.length);
 // }
 // f(1,2,3);
-//36:26
+
+// //метода slice не се интересува върху какво се изпълнява, интересува го да има някакви пропъртита и обекта, върху който се изпълнява има ли пропъртито length то е ок
+// //var arr = [].slice.call({length: 5});
+// function f(x){
+// 	var args = [].slice.apply(arguments);
+// 	console.log(args);
+// }
+// f(1,2,3);
+
+// //абсолютно всяка функция връща стойност
+// function sum(){
+// 	var number,
+// 	s = 0,
+// 	args = [].slice.apply(arguments);
+// 	for(number of args){
+// 		s += number;
+// 	} 
+// 	return s;
+// }
+// var result = sum(1,2,3,4);
+// console.log(result);
+
+//ако нещо трябва да го направим === 0, не го правим ами слагаме ! отпред
+//number % divider === 0//така не се прави
+//!(number % divider)//а така
+
+// //как да изкарам рандом число
+// function getRandomValue(min, max){
+// 	//използваме с двата if хак
+// 	if(min == null){
+// 		//give to min
+// 		min = 0;
+// 		max = 100;
+// 	}
+// 	else if(max == null){//това е съкратен запис на max === undefined || max === null
+// 		//give value to max
+// 		max = min;
+// 		min = 0;
+// 	}
+// 	//връща ни  рандом число в този интервал, ( | 0) цялото нещо направено към интиджър
+// 	return (Math.random() * (max - min) + min) | 0;
+// }
+// //връща ми рандом цяло число
+// console.log(getRandomValue());
+// //значи че мах е 10
+// console.log(getRandomValue(10));
+// //рандом число между 10 и 15
+// console.log(getRandomValue(10, 15));
+
+// //по-добрия начин как да изкарам рандом число
+// function getRandomValue(options){ 
+// 	//ако options е undefined всима празния обект
+// 	options = options || {};
+// 	var min = options.min || 0,
+// 	max = options.max || 100;
+// 	return (Math.random() * (max - min) + min) | 0;
+// 	}
+// 	console.log(getRandomValue());
+// 	console.log(getRandomValue({min: 0, max: 10}));
+// 	console.log(getRandomValue({min: 10, max: 15}));
+
+// //екма скрипт 6
+// var f = (msg) => console.log('Message: ' + msg);
+// function f1(msg){
+// 	console.log('Message: ' + msg);
+// }
+
+// //babel не се поддържа още навсякъде
+// var f = (msg) => console.log('Message: ' + msg);
+// f('Hello');
+
+
