@@ -132,6 +132,36 @@
 // var text = 'John';
 // console.log(text.valueOf());
 
-//нещо като стрингбилдер
-[].push('1', '2', '3');
-//52:06
+// //нещо като стрингбилдер
+// //това работи бързо, но при IE6
+// var result = [];
+// result.push('1', '2', '3');
+// result = result.join('');
+// var resultPlus = '1' + '2' + '3';
+// console.log(result);
+// console.log(resultPlus);
+
+// //как да разберем, кое работи по-бързо - разбираме, че + е най-бързо
+// var resultPlus, 
+//     resultArray,result,
+//     start, end, i,
+//     count = 100000;
+// start = new Date();
+// for(i = 0; i < count; i += 1){
+//     result = [];
+//     result.push('1', '2', '3');
+//     result = result.join('');
+// }
+// end = new Date();
+// console.log(end - start);
+// start = new Date();
+// for(i = 0; i < count; i += 1){
+//     resultPlus = '1' + '2' + '3';
+// } 
+//     end = new Date();
+//     console.log(end - start);
+
+// //за по-стари браузъри трябва да си напишем trim
+// if(!String.prototype.trim){
+//     String.prototype.trim = function...
+// }
