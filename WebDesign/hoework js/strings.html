@@ -1,0 +1,48 @@
+//escaping - заменяме специалните символи, когато работим с html или с javascript
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function onClick(){
+        //     //document е начина да стгнем през javascript до html дървото
+        //     var script,
+        //     tdText = document.getElementById('td-text'),
+        //     text = tdText.value;//така му взимам съдържанието
+        //     //създаваме си скрипт таг
+        //     script = document.createElement('script');
+        //     //казваме му че неговия InnerHTML е равен на този текст, който аз съм взела от тект бокса
+        //     //или казано по друг начин - правя си скрипт таг и в него ще сложа някакъв текст. който аз взимам от потребителя
+        //     script.innerHTML = text;
+        //     //добавяме скрипт тага към бодито
+        //     document.body.appendChild(script);
+        
+        
+        //така не ни правчт мизерии на сайта
+        //провери дали всеки стринг има този метод, и ако стринговете имат този метод, това значи че това нещо е true like и когато ние му сложим !отпред от true like става на false
+//обаче ако стринговете нямат този метод, тогава той е false like, защото е undefined и !undefined става true
+if(!String.prototype.htmlEscape){
+    //закачаме метода htmlEscape, на прототипа на стринга, това значи всички обекти, които са от тип стринг, ще имат този метод
+    String.prototype.htmlEscape = function(){
+        return this.replace(/</g, '&lt;').replace(/>/g, '&gt;')
+        .replace(/'/g, '&#39;').replace(/"/g, '&quot;');
+    };
+}
+ function onClick(){
+            var script,
+            tdText = document.getElementById('td-text'),
+            text = tdText.value;
+            script = document.createElement('script');
+//заради това може директно върху инстанция от тип стринг, каквато ни е текст ние да го извикаме и това вече ни заменя всички кавички и подобни неща         
+            script.innerHTML = text.htmlEscape();
+            document.body.appendChild(script);
+    }
+        }
+    </script>
+    <input id="td-text" type="text" />
+    <button onclick = 'onClick()'>Click</button>
+</body>
+</html>
