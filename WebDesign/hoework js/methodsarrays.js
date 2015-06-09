@@ -201,5 +201,149 @@
 // });
 // console.log(people);
     
-    //foreach той работи като for цикъл, само че го правим конкретно върху масива
-    //54:00
+    // //foreach той работи като for цикъл, само че го правим конкретно върху масива
+    // var names = ['John', 'Peter', 'Mariika'];
+    // names.forEach(function(name){
+    // 	console.log(name);
+    // });
+
+// //абсолютно еквивалентно е да кажа, горното се използва повече
+// var names = ['John', 'Peter', 'Mariika'],
+// i,
+// len;
+// for(i = 0, len = names.length; i < len; i += 1){
+// 	console.log(name);
+// }
+
+// //find е еквивалентно на first or default от C#
+// //find ни казва дали има елемент, който изпълнява условието в callback
+// //find ни връща най-левия елемент, който изпълнява условието, за да използваме find, първо трябва да си го напишем
+// var numbers = [1,2,3,4,5,6];
+// //провери ми дали в прототипа има метода find, ако не се поддържа искам да вляза в if-a
+// //този if може да си го копи-пействаме, дори без да го разбираме и само да искаме различен резултат
+// if(!Array.prototype.find){
+// 	Array.prototype.find = function(callback){
+// 		var i,
+// 		len;
+// 		for(i = 0, len = this.length; i < len; i += 1){
+// 			//ако върне true поне за единия елемент, тогава върни самия елемент
+// 			if(callback(this[i], i, this)){
+// 				return this[i];
+// 			}
+// 		}
+// 		//иначе
+// 		return undefined;
+// 	};
+// }
+// // var result = numbers.find(function(number){
+// // 	return !(number % 2);
+// // });
+// // //връща първия елемент, който е четен
+// // console.log(result);
+// var result = numbers.find(function(number, index){
+// 	return index > 3 && !(number % 2);
+// });
+// console.log(result);
+
+// //findIndex - дай ми елемента, който изпълнява тези условия 
+// var numbers = [1,2,3,4,5,6];
+// if(!Array.prototype.findIndex){
+// 	Array.prototype.findIndex = function(callback){
+// 		var i,
+// 		len;
+// 		for(i = 0, len = this.length; i < len; i += 1){
+// 			if(callback(this[i], i, this)){
+// 				return i;
+// 			}
+// 		}
+// 		return -1;
+// 	};
+// }
+// var result = numbers.findIndex(function(number, index){
+// 	//връща ми 3-ти индекс
+// 	return number === 3;
+// });
+// console.log(result);
+
+// //sort е от малкото методи, които ни променят масива
+// //той by default сортира стрингове
+// var numbers = [2,'11',4,3,5,6];
+// numbers.sort(function(x,y){
+// 	return y-x;
+// 	// if(x<y){
+// 	// 	return 1;
+// 	// }
+// 	// else{
+// 	// 	return -1;
+// 	// }
+// });
+// console.log(numbers);
+
+// //random sort
+// var numbers = [2,'11',4,3,5,6];
+// numbers.sort(function(x,y){
+// 	//понеже Math.random() генерира числа м/у 0 и 1, а 0,5 е посредата и правейки долния код, трябва да ни ги сортира по различен начин
+// 	return Math.random() - 0.5;
+// });
+// console.log(numbers);
+
+//  //метода fill
+//  //ако това нещо несъществува влез в prototype
+//  if(!Array.prototype.fill){
+//  	Array.prototype.fill = function(value){
+//  		var i,
+//  		len;
+//  		for(i = 0, len = this.length; i < len; i += 1){
+//  			this[i] = value;	
+//  		}
+//  	};
+//  }
+// var arr = [],
+// 	count = 5;
+// 	//arr[count - 1] = undefined;
+// 	arr.length = count;
+// 	arr.fill(1);
+// 	//прави ми масив от 5 елемента
+// 	console.log(arr);
+// //fill е полезен в комбинация с map
+// arr.fill(undefined);
+// console.log(
+// 	arr.map(function(item){
+// 		return 'Item ' + item;
+// 	})
+//    );
+
+// //chaining - всеки метод, ако трябва да върне резултат, връща резултат, ако не трябва връща this
+// var numbers = [1,2,3,4,5,6];
+// //имаме numbers върху тях извикай filter, върху резултата от filter извикай map и върху резултата от filter извикай forEach
+// //filter ми оставя четните числа, към тях map ще долепи Item и накрая forEach ще ги принтира
+// numbers.filter(function(item) {
+// 	return !(item % 2);
+// }).map(function(item) {
+// 	return 'Item: ' + item;
+// }).forEach(function(item){
+// 	console.log(item);
+// });
+// //с екма скрипт
+// numbers.filter((item) => !(item % 2))
+// 		.map((item) => 'Item: ' + item)
+// 		.forEach((item) => console.log(item));
+
+
+ if(!Array.prototype.fill){
+ 	Array.prototype.fill = function(value){
+ 		var i,
+ 		len;
+ 		for(i = 0, len = this.length; i < len; i += 1){
+ 			this[i] = value;	
+ 		}
+ 		//как да накараме fill да работи с chaining с: return this;
+ 		return this;
+ 	};
+ }
+ var numbers = [];
+ numbers.length = 5;
+ numbers.fill(2)
+ 		.filter((item) => !(item % 2))
+		.map((item) => 'Item: ' + item)
+		.forEach((item) => console.log(item));
