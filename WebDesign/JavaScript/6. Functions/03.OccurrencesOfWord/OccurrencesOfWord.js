@@ -5,7 +5,7 @@ The search can be case sensitive or case insensitive.
 Use function overloading.
 */
 
-var text = '(Funk, funk, funK) We want the Funk (Now if I give you the funk, you gon\' take it) We want the fUnk (Do you want the funk?) by Kendrick Lamar',
+var text = '(Funk, funk, Funk) We want the Funk (Now if I give you the funk, you gon\' take it) We want the fUnk (Do you want the funk?) by Kendrick Lamar',
     lookingFor = 'funk';
 
 console.log('In the text: ' + text);
@@ -13,7 +13,7 @@ console.log('You can find "' + lookingFor + '" with case-INsensitive search: ' +
 console.log('You can find "' + lookingFor + '" with case-SENSITIVE search: ' + findWord(text, lookingFor, 'sensitive') + ' times');
 
 function findWord(text, lookingFor, caseSensitive) {
-
+   
     var index = 0,
         counter = 0;
 

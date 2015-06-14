@@ -7,7 +7,7 @@ var i,
     loops = 20;
 
 testTask(loops);
-
+debugger;
 function testTask(loops) {
 
     var array = randomNumbers(loops), // Random generated array with numbers between 1 and 5
