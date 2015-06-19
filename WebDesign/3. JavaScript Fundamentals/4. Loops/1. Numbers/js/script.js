@@ -6,7 +6,7 @@ var number = 20,
     loops,
     result = [],
     i;
-
+debugger;
 loops = number + 1;
 
 for (i = 1; i < loops; i += 1) {
