@@ -31,11 +31,12 @@
 // console.log(p instanceof Peson);
 // console.log('' instanceof Peson);
 
-function Peson (name) {
-	this.name = name;
-}
-var p = new Peson('Goshko');
-var p1 = new Peson('Goshko1');
-console.log(p);
-console.log(p1);
-/16:16
+// function Peson (name) {
+// 	this.name = name;
+// }
+// var p = new Peson('Goshko');
+// var p1 = new Peson('Goshko1');
+// console.log(p);
+// console.log(p1);
+// /16:16
+
