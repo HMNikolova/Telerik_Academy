@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="html_lang">
+<head>
+   
+</head>
+<body>
+	<ul>
+		<!-- <li id="ivanli">
+			Pesho
+			<a href="#">Click</a>	
+		</li> -->
+		<li>
+			Pesho	
+		</li>
+		<li>
+			Gosho	
+		</li>
+		<li>
+			Ivan	
+		</li>
+		<li>
+			Marko	
+		</li>
+	</ul>
+	<!-- <div>
+		<input type="text" id="my-name" />
+		<button id="get-name" onclick="getName()">Get Name</button>
+	</div> -->
+    <script>
+		//var li = document.getElementById('ivanli');
+		// // //console.log(li);
+		// // //li.innerText = 'Pesho';
+		// // //innerHTML - връща ни като стринг целия контент на самия елемент, без самия елемент
+		// // var liContent = li.innerHTML;
+		// // console.log(liContent);
+		// // li.innerHTML += '<a href="#">Another Click</a>';
+		// // //най-бързия начин да изтрием нещо
+		// // li.innerHTML = '';
+		// //outerHTML - връща контента на елемента със самия елемент
+		// var liOuter = li.outerHTML;
+		// console.log(liOuter);
+		//innerText/textContent - връщат content-a
+		// var liOuter = li.innerText;
+		// console.log(liOuter);
+		// //може да сменим Id-to
+		// //li.id = 'pesho';
+		// //сменям цвят
+		// li.style.color = 'red';
+
+		// //браузера го взима и го зарежда в паметта
+		// var input = document.getElementById('my-name');
+		// function getName() {
+		// 	//селектира ни нещо по id
+		// 	//всичк и input-и имат точка value - value ни връща това, което user-а е попълнил (value винаги е стринг)
+		// 	var value = input.value;
+		// 	//каквото съм написала да го прехвърли в li-то
+		// 	document.getElementById('ivanli').innerText = value;
+		// }
+
+		//всички освен id-то връщат масив от елементи, дори и да имам само един
+		//getElementsByTagName връща на всички li-та в html-а id-та
+		var liCollection = document.getElementsByTagName('li');
+		console.log(liCollection);
+		//колекция от li елементи
+		for (var i = 0, len = liCollection.length; i < len; i++) {
+			liCollection[i].id = i;
+		}
+		</script>>
+</body>
+</html>
+//43:53
