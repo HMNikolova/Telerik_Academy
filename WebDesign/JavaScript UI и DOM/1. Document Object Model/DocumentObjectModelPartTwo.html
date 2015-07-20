@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="html_lang">
+<head>
+   
+</head>
+<body>
+	<ul id="names">
+		<li>
+			Pesho	
+		</li>
+		<li>
+			Gosho	
+		</li>
+		<li>
+			Ivan	
+		</li>
+		<li>
+			Marko	
+		</li>
+	</ul>
+	<!--<ul>-->
+	<!--    <li>-->
+	<!--        Telerik-->
+	<!--    </li>-->
+	<!--</ul>-->
+    <script>
+//     //така ще ми върне само li-тата в id - names(децата на ul)
+//         var ulNames = document.getElementById('names');
+        
+// 	    var liCollection = ulNames.getElementsByTagName('li');
+// 		console.log(liCollection);
+		
+// 		for (var i = 0, len = liCollection.length; i < len; i++) {
+// 			liCollection[i].id = i;
+// 		}
+
+        // //втори вариант на как ще ми върне само li-тата в id - names(децата на ul)
+        // //не се поддържа от всички браузери
+        // var liCollection = document.querySelectorAll('#names li');
+        // console.log(liCollection); 
+        
+        //ще ни върне всички линкове в html страницата
+        //var liCollection = document.links;
+        //бърз начин да селектирам form-a, ако кажа .submit изпраща формата през javascript, а не през стандартния submit бутона
+        //var liCollection = document.forms[0];
+        
+        //с liLive ни се променят елементите, дори и да добавяме след това
+        var liLive = document.getElementsByTagName('li');
+        //liStatic не ни се променят елементите, ако добавяме след това
+        var liStatic = document.querySelectorAll('li');
+        
+        console.log(liLive);
+        console.log(liStatic);
+        
+        var ul = document.getElementsByTagName('ul')[0];
+        ul.innerHTML += '<li>Waci</li>';
+        
+        console.log(liLive);
+        console.log(liStatic);
+	</script>
+</body>
+</html>
