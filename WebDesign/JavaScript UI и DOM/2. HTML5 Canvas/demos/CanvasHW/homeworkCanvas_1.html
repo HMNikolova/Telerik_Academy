@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8">
+
+  <title>Homework Canvas Problem 1</title>
+	<style>
+		canvas{
+			background: #161616;
+		}
+	</style>
+  <meta name="viewport" content="width=device-width">
+</head>
+<body>
+	<div>1. Draw the following graphics using canvas:</div>
+	<canvas id="canvas-area" width="932" height="587">
+	</canvas>
+<script>
+     var canvas = document.getElementById("canvas-area"),
+     	ctx = canvas.getContext("2d");
+     ctx.lineWidth = 3;
+     ctx.beginPath();
+     ctx.strokeStyle = "#4d838d";
+     ctx.fillStyle = "#95ced9";	 
+     ctx.strokeStyle = "black";
+     ctx.fillStyle = "#9d6161";
+     ctx.beginPath();
+     ctx.moveTo(580, 198);
+     ctx.lineTo(930, 198);
+     ctx.lineTo(755, 2);
+     ctx.closePath();
+     ctx.fill();
+     ctx.stroke();
+     ctx.fillRect(580, 198, 350, 263);
+     ctx.strokeRect(580, 198, 350, 263);
+     ctx.moveTo(824, 151);
+     ctx.lineTo(824, 51);
+     ctx.stroke();
+     ctx.moveTo(862, 151);
+     ctx.lineTo(862, 51);
+     ctx.stroke();
+     ctx.fillRect(825, 51, 36, 100);
+     ctx.beginPath();
+	ctx.save();
+	ctx.scale(1, 1/4);
+	ctx.arc(843, 211, 18, 0, 2*Math.PI);
+	ctx.restore();
+	ctx.fill();
+	ctx.stroke();
+	ctx.beginPath();
+	ctx.save();
+	ctx.scale(1, 0.6);
+	ctx.arc(666, 620, 49, 0, Math.PI, true);
+	ctx.restore();
+	ctx.stroke();
+	ctx.moveTo(666, 345);
+	ctx.lineTo(666, 463);
+	ctx.stroke();
+	ctx.moveTo(617, 367);
+	ctx.lineTo(617, 463);
+	ctx.stroke();
+	ctx.moveTo(715, 367);
+	ctx.lineTo(715, 463);
+	ctx.stroke();	
+	ctx.beginPath();
+	ctx.arc(652, 425, 5, 0, 2*Math.PI);
+	ctx.stroke();
+	ctx.beginPath();
+	ctx.arc(680, 425, 5, 0, 2*Math.PI);
+	ctx.stroke();
+	ctx.strokeStyle = "#9d6161";
+	ctx.fillStyle = "black";
+	ctx.beginPath();
+	ctx.fillRect(604, 230, 124, 82);
+	ctx.moveTo(604, 271);
+	ctx.lineTo(728, 271);
+	ctx.stroke();
+	ctx.moveTo(666, 230);
+	ctx.lineTo(666, 312);
+	ctx.stroke();
+	ctx.fillRect(775, 230, 124, 82);
+	ctx.moveTo(775, 271);
+	ctx.lineTo(899, 271);
+	ctx.stroke();
+	ctx.moveTo(837, 230);
+	ctx.lineTo(837, 312);
+	ctx.stroke();
+	ctx.fillRect(775, 340, 124, 82);
+	ctx.moveTo(775, 381);
+	ctx.lineTo(899, 381);
+	ctx.stroke();
+	ctx.moveTo(837, 340);
+	ctx.lineTo(837, 422);
+	ctx.stroke();
+</script>
+</body>
+</html>
