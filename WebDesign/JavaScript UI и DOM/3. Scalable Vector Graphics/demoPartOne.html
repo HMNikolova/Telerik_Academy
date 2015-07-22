@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> </title>
+		<style type="text/css">
+			svg{
+				border: 5px solid black;
+			}
+		</style>
+    </head>
+    <body>
+        <svg width="500" height="300">
+			//квадрат
+            <rect x="50" y="100" width="75" height="150" />
+			<rect x="170" y="100" width="75" height="150" fill="yellowgreen" />
+			<rect x="135" y="100" width="25" height="150" stroke="yellowgreen" fill="none" />
+			//линия
+			<line x1="15" y1="75" x2="150" y2="200" style="stroke-width: 5px" stroke="yellowgreen" />
+			//кръг - първо му даваме ценъра (х и у)
+			<circle cx="150" cy="280" r="20" fill="green" stroke="purple" />
+			<circle cx="150" cy="280" r="17" fill="none" stroke="purple" />
+			<circle cx="150" cy="280" r="14" fill="yellowgreen" stroke="purple" />
+			<circle cx="150" cy="280" r="11" fill="pink" stroke="purple" />
+			<circle cx="150" cy="280" r="8" fill="yellow" stroke="purple" />
+			//път - M e move; L от точка 50 до х 150, у 175; H искам да направиш от последната точка хоризонтална линия (с главни букви е абсолюте н път)
+			<path d="M 50 75 L 150 175 H 350 V 10 Z" fill="none" stroke="pink" />	
+			//може с малко l и h, което значи релативен път (може и с минусови цифри)
+			<path d="M 50 75 l 150 175 h 350 V 10 Z" fill="none" stroke="yellowgreen" />	
+			<path d="M 10 10 l 5 5 l -5 5 l 5 5 l -5 5 l 5 5 l -5 5" fill="none" stroke="yellowgreen" />
+			//34:00
+        </svg>
+    </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> </title>
+		<style type="text/css">
+			svg{
+				border: 5px solid black;
+			}
+		</style>
+    </head>
+    <body>
+        <svg width="500" height="300">
+        	//криви	- започва от 10 10, х=0  у=40, завършва на 100 100 
+			<path d="M 10 10 Q 0 40 100 100" fill="none" stroke="yellowgreen" />
+			<path d="M 110 110 Q 230 150 150 150" fill="none" stroke="yellowgreen" />
+			//кубична крива на Безие(има още две контролни точки) - искам да ми издърпваш от точка 0 170 до точка 180 150
+			<path d="M 160 160 C 0 170 180 150 150 200" fill="none" stroke="yellowgreen" />
+			//t ни продължава кривата
+			<path d="M 210 210 C 170 170 180 150 200 250 T 180 100 100 60" fill="none" stroke="yellowgreen" />
+        </svg>
+    </body>
+</html>
+//42:00
