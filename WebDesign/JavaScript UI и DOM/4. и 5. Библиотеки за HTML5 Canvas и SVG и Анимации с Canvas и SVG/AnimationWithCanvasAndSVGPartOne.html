@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> </title>
+		 <style type="text/css">
+			canvas{
+				border: 1px solid black !important;
+			}
+		</style> 
+			<script type="text/javascript" src="bower_components/kineticjs/kinetic.js"></script>
+		
+    </head>
+    <body>
+    	<div id="container"></div>
+    <script type="text/javascript">
+   //  /* globals Kinetic */
+   //  //правим си контайнер
+   //  	var stage = new Kinetic.Stage({
+   //  		container: 'container',
+   //  		width: 850,
+   //  		height: 550
+   //  	});
+
+   //  	//правим си топче
+   //  	var layer = new Kinetic.Layer();
+   //  	var i,
+   //  		count = 20;
+   //  	for(i = 0; i < count; i += 1){
+   //  	var ball = new Kinetic.Circle({
+   //  		//x: 15 * (i + 1),
+   //  		//y: 15 * (i + 1),
+   //  		//x: Math.random() * (stage.getWidth() - 30) + 15,
+   //  		//y: Math.random() * (stage.getHeight() - 30) + 15,
+   //  		 x: Math.random() * stage.getWidth(),
+   //   		 y: Math.random() * stage.getHeight(),
+   //  		radius: 15,
+   //  		fill: 'pink',
+   //  		stroke: 'purple'
+   //  	});
+   //  	 ball.updatex = 3;
+   //  	ball.updatey = 3;
+   //  	layer.add(ball);
+   //  	}	
+   //  	stage.add(layer);
+
+   //  	// //да направим топчето да рекушира
+   //  	// var updatexs = Array.apply(null, {length: count})
+   //  	// .map(function(){
+   //  	// 	//return Math.random() * 20;
+   //  	// 	return 5;
+   //  	// }),
+   //  	// 	updateys = Array.apply(null, {length: count})
+   //  	// .map(function(){
+   //  	// 	//return Math.random() * 20;
+   //  	// 	return 5;
+   //  	// });
+
+   //  	//да го направим да подскача
+   //  	function animFrame(){
+   //  		var balls = layer.find('Circle');
+   //  			//balls.forEach(function(ball, index){
+   //  			balls.forEach(function(ball){
+   //  			// var updatex = updatexs[index];
+   //  			// var updatey = updateys[index];
+   //  		//за да ги променяме първо взимаме текущите
+   //  		var x = ball.getX() + updatex,
+   //  			y = ball.getY() + updatey,
+   //  			r = ball.getRadius();
+   //  			//проверка за рекушет
+   //  			if(x - r < 0 || x + r > stage.getWidth()){
+   //  				//трябва да запазим дали знака е положителен или отрицателен
+   //  				//var sign = updatex/Math.abs(updatex);
+   //  				//updatex = -sign * Math.random() * 20;
+   //  				ball.updatex *= -1;
+   //  			}
+   //  			if(y - r < 0 || y + r > stage.getHeight()){
+   //  				//var sign = updatey/Math.abs(updatey);
+   //  				//updatey = -sign * Math.random() * 20;
+   //  				ball.updatey *= -1;
+   //  			}
+
+   //  			//рикушет
+   //  			// if(balls.some(function(other){
+   //  			// 	if(other === ball){
+   //  			// 		return false;
+   //  			// 	}
+   //  			 if(balls.some(isBallCollidingWith)){
+			//           ball.updatex *= -1;
+			//           ball.updatey *= -1;
+			//         }
+			//         ball.setX(ball.getX() + ball.updatex);
+			//         ball.setY(ball.getY() + ball.updatey);
+			//         function isBallCollidingWith(other){
+			//           if(other === ball){
+			//             return false;
+			//           }
+   //  				var b1 = {
+   //  					x: ball.getX(),
+   //  					y: ball.getY(),
+   //  					r: ball.getRadius()
+   //  				},
+   //  				b2 = {
+   //  					x: other.getX(),
+   //  					y: other.getY(),
+   //  					r: other.getRadius()
+   //  				};
+   //  				var d = Math.sqrt((b1.x - b2.x) * (b1.x - b2.x) + 
+   //                          (b1.y - b2.y) * (b1.y - b2.y));
+   //        			return d <= (b1.r + b2.r);
+
+   //  				}
+   //  				// updatex *= -1;
+   //  				// updatey *= -1;
+    			
+
+   //  		// ball.setX(ball.getX() + updatex);
+   //  		// ball.setY(ball.getY() + updatey); 
+   //  		// updatexs[index] = updatex;
+   //  		// updateys[index] = updatey;
+
+   //  	});
+   //  		layer.draw();
+   //  		//setTimeout(animFrame, 20);
+   //  		//по културния начин да движим топчето
+   //  		 requestAnimationFrame(animFrame);
+	  // }
+	  // animFrame();
+
+	  //на Дончо варианта
+	  /* globals Kinetic */
+  var stage = new Kinetic.Stage({
+    container: 'container',
+    width: 850,
+    height: 550
+  });
+  var layer = new Kinetic.Layer();
+  var i,
+    count = 20;
+  for(i = 0; i < count; i += 1 ){
+    var ball = new Kinetic.Circle({
+      x: Math.random() * stage.getWidth(),
+      y: Math.random() * stage.getHeight(),
+      radius: 15,
+      fill: 'pink',
+      stroke: 'purple'
+    });
+    ball.updatex = 3;
+    ball.updatey = 3;
+    layer.add(ball);
+  }
+  stage.add(layer);
+  function animFrame(){
+    var balls = layer.find('Circle');
+      balls.forEach(function(ball){
+        var x = ball.getX() + ball.updatex,
+          y = ball.getY() + ball.updatey,
+          r = ball.getRadius();
+        if(x - r < 0 || x + r > stage.getWidth()){
+          ball.updatex *= -1;
+        }
+        if(y - r < 0 || y + r > stage.getHeight()){
+          ball.updatey *= -1;
+        }
+        if(balls.some(isBallCollidingWith)){
+          ball.updatex *= -1;
+          ball.updatey *= -1;
+        }
+        ball.setX(ball.getX() + ball.updatex);
+        ball.setY(ball.getY() + ball.updatey);
+        function isBallCollidingWith(other){
+          if(other === ball){
+            return false;
+          }
+          var b1 = {
+            x: ball.getX(),
+            y: ball.getY(),
+            r: ball.getRadius()
+          },
+            b2 = {
+              x: other.getX(),
+              y: other.getY(),
+              r: other.getRadius()
+            };
+          var d = Math.sqrt((b1.x - b2.x) * (b1.x - b2.x) + 
+                            (b1.y - b2.y) * (b1.y - b2.y));
+          return d <= (b1.r + b2.r);
+        }
+      });
+    layer.draw();
+    requestAnimationFrame(animFrame);
+  }
+  animFrame();
+	</script> 
+    </body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> </title>
+		<style type="text/css">
+			canvas{
+				border: 1px solid black !important;
+			}
+		</style>
+			<script type="text/javascript" src="bower_components/kineticjs/kinetic.js"></script>
+		
+    </head>
+    <body>
+    	<div id="kinetic-container"></div>
+    <script type="text/javascript">
+    //window.onload = function(){
+    	var stage = new Kinetic.Stage({
+				container: 'kinetic-container',
+				width: 500,
+				height: 350
+    		});
+
+    		var layer = new Kinetic.Layer();
+    		
+    		var rect = new Kinetic.Rect({
+    				x: 100,
+    				y: 150,
+    				width: 75,
+    				height: 225,
+    				fill: 'yellowgreen',
+    				stroke: 'purple',
+    				lineWidth: 5
+    		});	
+    		console.log('Here');	
+    		layer.add(rect);
+    		layer.add(new Kinetic.Rect({
+    				x: 150,
+    				y: 150,
+    				width: 75,
+    				height: 225,
+    				fill: 'yellowgreen',
+    				stroke: 'purple',
+    				lineWidth: 5
+    		}));
+
+    		var shape = new Kinetic.Line({
+    			//числата, които са на четна позиция ни сочат х-ове, а на нечетна позиция у-еци
+    			points: [50, 100, 150, 100, 150, 200],
+    			stroke: 'purple',
+    			fill: 'yellowgreen',
+    			closed: true,
+    			//tension ни закръглява кривите, може и с минус
+    			tension: 1,
+    			scaleX: 0.5,
+    			//мога да го местя с:
+    			draggable: true
+    		}).rotate(25);
+    		layer.add(shape);
+    		//при клик си сменя цвета
+    		// shape.on('click', function(){
+    		// 	this.fill('pink');
+    		// });
+
+			// //при hover си сменя цвета
+	 	// 		shape.on('mouseover', function(){
+   //  			if(this.fill() === 'pink'){
+   //  				this.fill('green');
+   //  			}
+   //  			else{
+   //  				this.fill('pink');
+   //  			}
+   //  			layer.draw();
+   //  		});
+
+				document.getElementById('kinetic-container').addEventListener('mouseover', function(){
+    				layer.find('Line').forEach(function(sh){
+    					if(sh.fill() === 'pink'){
+    						sh.fill('green');
+    					} else {
+    					sh.fill('pink');
+    				}
+    			layer.draw();
+    		});
+    		stage.add(layer);
+		});
+    </script>
+    </body>
+</html>
